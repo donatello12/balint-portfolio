@@ -85,8 +85,9 @@ main { max-width: 980px; margin: 0 auto; padding: 1.25rem; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
-  margin-top: 1.4rem;
+  align-items: stretch;   /* minden oszlop ugyanolyan magas lesz */
 }
+
 .project {
   background: var(--surface);
   border: 1px solid rgba(255,255,255,.08);
@@ -100,44 +101,9 @@ main { max-width: 980px; margin: 0 auto; padding: 1.25rem; }
   box-shadow: 0 12px 40px rgba(0,229,255,.15);
 }
 
-.btn {
-  position: relative;
-  display: inline-block;
-  padding: .7rem 1.15rem;
-  border-radius: 12px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  color: #001015;
-  background: linear-gradient(135deg, #00E5FF 0%, #00B8D4 100%);
-  border: 2px solid rgba(0,229,255,.55);
-  box-shadow:
-    0 0 0 2px rgba(0,229,255,.35),
-    0 14px 28px rgba(0,229,255,.22);
-  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
-}
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-1px);
-  box-shadow:
-    0 0 0 3px rgba(0,229,255,.45),
-    0 20px 46px rgba(0,229,255,.28);
-}
 
-/* Piros (jobban elüt a kéktől) */
-.btn--alt {
-  color: #fff;
-  background: linear-gradient(135deg, #FF1744 0%, #FF4569 100%);
-  border: 2px solid rgba(255,23,68,.55);
-  box-shadow:
-    0 0 0 2px rgba(255,23,68,.35),
-    0 14px 28px rgba(255,23,68,.22);
-}
-.btn--alt:hover,
-.btn--alt:focus-visible {
-  box-shadow:
-    0 0 0 3px rgba(255,23,68,.45),
-    0 20px 46px rgba(255,23,68,.30);
-}/* Link, hogy ne vesszen el a kéken */
+
+
 .link-underline {
   color: var(--primary);
   text-decoration: underline;
@@ -158,8 +124,10 @@ footer {
 }
 /* ======= Hero ======= */
 .hero {
-  padding: 3.5rem 0 2rem;
-  position: relative;
+  padding: 4rem 1.25rem 2.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center; /* !!! szöveg középre */
 }
 .hero__eyebrow {
   color: var(--muted);
@@ -169,11 +137,17 @@ footer {
   font-size: .8rem;
   margin-bottom: .5rem;
 }
+/* Cím */
 .hero__title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.2vw + 1rem, 3.6rem); /* kisebb tartomány */
+  max-width: 22ch;
+  margin: 0 auto 1rem;
   line-height: 1.1;
-  margin: 0 0 .75rem;
+  letter-spacing: -0.2px;
+  text-align: center;
 }
+
+
 .hero__title-accent {
   display: block;
   font-weight: 800;
@@ -183,13 +157,25 @@ footer {
   color: transparent;
   text-shadow: 0 0 24px rgba(0,229,255,.25);
 }
+/* Bekezdések */
 .hero__lead {
-  max-width: 60ch;
-  color: var(--text);
+  max-width: 55ch;     /* kb. 55–60 karakter */
+  margin: 0.75rem auto 0; /* középre és lélegzőbb spacing */
+  line-height: 1.75;
+  font-size: 1.1rem;
+  color: #EAFBFF;
   opacity: .95;
-  font-size: 1.05rem;
+  text-align: center;
 }
-.hero__ctas { display: flex; gap: .8rem; align-items: center; margin: 1.1rem 0 0.6rem; }
+
+/* Gombok középre */
+.hero__ctas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .9rem;
+  margin-top: 1.4rem;
+}
 .link-underline { color: var(--primary); text-decoration: underline; }
 
 /* ======= Badges & KPIs ======= */
@@ -229,6 +215,8 @@ footer {
 }
 /* ======= Projects – erősebb kontraszt hover ======= */
 .projects .project {
+  display: flex;
+  flex-direction: column; 
   background: rgba(9,12,20,0.72);            /* sötétebb alap */
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 14px;
@@ -238,6 +226,15 @@ footer {
   transition: background-color .25s ease, transform .2s ease,
               box-shadow .25s ease, border-color .25s ease;
   will-change: transform;
+}
+.projects .project-body {
+  flex: 1;              /* kitölti a rendelkezésre álló helyet */
+}
+
+.projects .project-footer {
+  margin-top: auto;     /* gombokat az aljára tolja */
+  display: flex;
+  justify-content: center; /* középre vagy stretch-re */
 }
 .projects .project:hover {
   background: rgba(9,12,20,0.97);            /* sötétebb, nem halványodik */
@@ -258,40 +255,23 @@ footer {
 
 /* Ha a projekteknél véletlenül a .card overlay is rákerülne, halkítsuk: */
 .projects .project.card::after { opacity: .08; }
-/* --- Buttons keep their own color & no underline --- */
-a.btn, .btn { text-decoration: none; }
-a.btn:hover, .btn:hover,
-a.btn:focus-visible, .btn:focus-visible {
-  text-decoration: none;
-}
+
 
 /* a globális 'a:hover' CIÁN színét NEM alkalmazzuk a .btn-re */
-a:not(.btn):hover { color: var(--primary); text-decoration: underline; }
+
 
 /* Projets (kék/cián) gomb szöveg mindig sötét maradjon */
-.btn { color: #001015 !important; }
-.btn:hover, .btn:focus-visible { color: #001015 !important; }
+
 
 /* Alternatív gomb: lila, jobban passzol a kékkel, mint a piros */
-:root { --secondary: #A855F7; } /* ha tetszik, ezzel lecseréljük a pirosat lilára */
-.btn--alt {
-  color: #fff !important;
-  background: linear-gradient(135deg, #A855F7 0%, #7C3AED 100%);
-  border: 2px solid rgba(168,85,247,.55);
-  box-shadow:
-    0 0 0 2px rgba(168,85,247,.35),
-    0 14px 28px rgba(168,85,247,.22);
-}
-.btn--alt:hover, .btn--alt:focus-visible {
-  color: #fff !important;
-  box-shadow:
-    0 0 0 3px rgba(168,85,247,.45),
-    0 20px 46px rgba(168,85,247,.30);
-}
+
+
 /* ======= Glass blur hover a KÁRTYÁKON ======= */
 /* Alap: simább animációk minden kártyán */
 .card,
 .projects .project {
+    display: flex;
+  flex-direction: column;
   position: relative;
   isolation: isolate;
   will-change: transform, backdrop-filter;
@@ -304,6 +284,27 @@ a:not(.btn):hover { color: var(--primary); text-decoration: underline; }
     -webkit-backdrop-filter .25s ease,
     opacity .25s ease;
 }
+.projects .project ul {
+  margin-bottom: 1rem;      /* legyen kis térköz a lista és a gomb között */
+}
+/* ===== Projekt kártyák – gomb igazítás ===== */
+.projects .project {
+  display: flex;
+  flex-direction: column;   /* tartalom fent, gomb lent */
+}
+
+.projects .project ul {
+  margin-bottom: 1rem;      /* legyen kis térköz a lista és a gomb között */
+}
+
+.projects .project .btn {
+  margin-top: auto;         /* minden tartalom fölé kerül */
+  align-self: center;       /* középre rakja vízszintesen */
+  width: fit-content;       /* csak amekkora kell */
+}
+
+
+
 
 /* Hover: erősebb blur + kicsit sötétebb háttér, cián keret és fénygyűrű */
 .card:hover,
@@ -889,4 +890,72 @@ main a:not(.btn):not(.nav__link):hover,
 /* (opcionális) egy ici-pici belső gyűrű a hoverre */
 .nav__link:hover{
   box-shadow: 0 0 0 3px rgba(0,229,255,.12);
+}
+/* Form gomb középre igazítása */
+.form-actions {
+  display: flex;
+  justify-content: center; /* vízszintesen középre */
+  margin-top: .8rem;
+}
+
+.form-actions .btn {
+  min-width: 220px; /* opcionális: fix szélesség, hogy szebb legyen */
+  text-align: center;
+}
+.projects-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--muted); /* megmaradjon a halvány szín */
+}
+.projects-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.s-hero {
+  text-align: center;
+}
+
+.s-hero h1 {
+  margin-bottom: .5rem;
+}
+
+.s-hero p {
+  max-width: 60ch;       /* hogy ne fusson túl szélesre */
+  margin: 0 auto 1rem;   /* középre igazítva */
+}
+.card.intro {
+  text-align: center;
+}
+
+.card.intro p {
+  max-width: 60ch;
+  margin: 0 auto 1rem;  /* középre igazítva */
+}
+/* Hero tipó finomhangolás: rövidebb sorhossz, szebb tördelés */
+.hero {
+  padding-top: 3.5rem;
+}
+
+
+
+.hero__lead{
+  max-width: 62ch;                 /* ~60–65 karakteres sor */
+  line-height: 1.7;                /* kényelmes sorköz */
+  font-size: clamp(1rem, 1.2vw + .9rem, 1.125rem);
+  color: #EAFBFF;                  /* picit világosabb, de nem vakító */
+  opacity: .96;
+  text-wrap: pretty;               /* modernebb tördelés (támogatott böngészőkben) */
+  hyphens: auto;                   /* szóelválasztás */
+}
+
+.hero__lead + .hero__lead{
+  margin-top: .6rem;               /* a két bekezdés között kis tér */
+}
+
+/* extra: nagy kijelzőn ne legyen túl széles a teljes hero blokk */
+@media (min-width: 1100px){
+  .hero { max-width: 60rem; }      /* opcionális „optikai” szélesség */
+}
+@media (max-width: 420px){
+  .hero__title { font-size: clamp(2.2rem, 8vw + .5rem, 3.2rem); }
 }

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kapcsolat - Bálint Portfólió</title>
   <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form-success.css" />
+<link rel="stylesheet" href="./css/buttons.css">
+
 </head>
 <body>
 
@@ -30,13 +33,14 @@
 
   <!-- TARTALOM -->
   <main>
-    <section class="card">
-      <h1>Kapcsolat</h1>
-      <p class="muted">
-        Örömmel veszem a megkeresést együttműködés, weboldal, adatelemzés vagy előadás kapcsán.
-        Írj röviden a célokról, időzítésről és arról, hogy mi jelentene sikert a számodra.
-      </p>
-    </section>
+<section class="card intro">
+  <h1>Kapcsolat</h1>
+  <p class="muted">
+    Örömmel veszem a megkeresést együttműködés, weboldal, adatelemzés vagy előadás kapcsán.
+    Írj röviden a célokról, időzítésről és arról, hogy mi jelentene sikert a számodra.
+  </p>
+</section>
+
 
     <div class="form-grid">
       <!-- BAL: elérhetőségek -->
@@ -60,61 +64,65 @@
       </aside>
 
       <!-- JOBB: űrlap (mailto) -->
-      <section class="card form-card">
-        <h2>Írj üzenetet</h2>
-        <form id="contactForm" class="form" novalidate>
-          <!-- honeypot anti-spam -->
-          <input type="text" name="hp" autocomplete="off" tabindex="-1" class="hp" aria-hidden="true">
+     <section class="card form-card">
+  <h2>Írj üzenetet</h2>
+<form id="contactForm" action="https://formsubmit.co/balintadambakos@gmail.com" method="POST" class="form">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="">
+  <!-- honeypot -->
+  <input type="text" name="hp" autocomplete="off" tabindex="-1" class="hp" aria-hidden="true">
 
-          <div class="form-row">
-            <div class="field">
-              <label for="name">Név *</label>
-              <input id="name" name="name" type="text" class="input" required autocomplete="name" placeholder="Teljes neved">
-            </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="name">Név *</label>
+        <input id="name" name="name" type="text" class="input" required placeholder="Teljes neved">
+      </div>
 
-            <div class="field">
-              <label for="email">E-mail *</label>
-              <input id="email" name="email" type="email" class="input" required autocomplete="email" placeholder="te@pelda.hu">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="topic">Téma</label>
-              <select id="topic" name="topic" class="select">
-                <option>Weboldal</option>
-                <option>Automatizmus &amp; Adatelemzés</option>
-                <option>Előadás</option>
-                <option>Egyéb</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="timing">Időzítés</label>
-              <select id="timing" name="timing" class="select">
-                <option>Néhány héten belül</option>
-                <option>Egy hónapon belül</option>
-                <option>Rugalmas</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="message">Üzenet *</label>
-            <textarea id="message" name="message" class="textarea" rows="6" maxlength="1000" required
-                      placeholder="Pár mondat a célokról, háttérről és elvárt eredményről."></textarea>
-            <div class="char-counter"><span id="msgCounter">0</span>/1000</div>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn--alt">Üzenet küldése</button>
-            <a class="btn" href="mailto:you@example.com?subject=Kapcsolat%20-%20B%C3%A1lint%20Portf%C3%B3li%C3%B3">Megnyitás e-mailben</a>
-          </div>
-
-          <p id="formStatus" class="muted small" role="status" aria-live="polite"></p>
-        </form>
-      </section>
+      <div class="field">
+        <label for="email">E-mail *</label>
+        <input id="email" name="email" type="email" class="input" required placeholder="te@pelda.hu">
+      </div>
     </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="topic">Téma</label>
+        <select id="topic" name="topic" class="select">
+          <option>Weboldal</option>
+          <option>Automatizmus &amp; Adatelemzés</option>
+          <option>Előadás</option>
+          <option>Egyéb</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="timing">Időzítés</label>
+        <select id="timing" name="timing" class="select">
+          <option>Néhány héten belül</option>
+          <option>Egy hónapon belül</option>
+          <option>Rugalmas</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="message">Üzenet *</label>
+      <textarea id="message" name="message" class="textarea" rows="6" maxlength="1000" required
+                placeholder="Pár mondat a célokról, háttérről és elvárt eredményről."></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn--alt">Üzenet küldése</button>
+    </div>
+  </form>
+</section>
+
+    </div>
+    <div id="form-success" class="form-success hidden">
+  <h3>✅ Köszönöm az üzenetet!</h3>
+  <p>Hamarosan válaszolok az email címedre.</p>
+</div>
+
   </main>
 
   <!-- FOOTER -->
@@ -124,45 +132,5 @@
 
   <script src="./js/script.js"></script>
 
-  <!-- Mailto küldés (API nélkül) -->
-  <script>
-    (function () {
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      const msg = document.getElementById('message');
-      const counter = document.getElementById('msgCounter');
-
-      if (msg && counter) {
-        const update = () => counter.textContent = msg.value.length.toString();
-        msg.addEventListener('input', update); update();
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const fd = new FormData(form);
-        if (fd.get('hp')) return; // honeypot
-
-        const name   = (fd.get('name')   || '').toString().trim();
-        const email  = (fd.get('email')  || '').toString().trim();
-        const topic  = (fd.get('topic')  || '').toString();
-        const timing = (fd.get('timing') || '').toString();
-        const body   = (fd.get('message')|| '').toString();
-
-        if (!name || !email || !body) {
-          status.textContent = 'Kérlek töltsd ki a kötelező mezőket (Név, E-mail, Üzenet).';
-          return;
-        }
-
-        const to = 'you@example.com'; // <-- IDE tedd a saját címed!
-        const subject = encodeURIComponent(`Megkeresés — ${topic} — ${name}`);
-        const mailBody = encodeURIComponent(
-          `Név: ${name}\nE-mail: ${email}\nTéma: ${topic}\nIdőzítés: ${timing}\n\nÜzenet:\n${body}\n`
-        );
-
-        window.location.href = `mailto:${to}?subject=${subject}&body=${mailBody}`;
-        status.textContent = 'Megnyitottam az alapértelmezett leveleződet a kitöltött üzenettel.';
-      });
-    })();
-  </script>
 </body>
 </html>
