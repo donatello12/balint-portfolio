@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kapcsolat - Bálint Portfólió</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav__spacer" aria-hidden="true"></div>
+      <nav class="nav__links" role="navigation" aria-label="Fő navigáció">
+        <a class="nav__link" href="./index.html">Kezdőlap</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./projects.html">Projektek</a>
+        <a class="nav__link active" href="./contact.html">Kapcsolat</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Menü" aria-expanded="false"
+              onclick="document.documentElement.classList.toggle('nav-open');
+                       this.setAttribute('aria-expanded',
+                         document.documentElement.classList.contains('nav-open'));">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- TARTALOM -->
+  <main>
+    <section class="card">
+      <h1>Kapcsolat</h1>
+      <p class="muted">
+        Örömmel veszem a megkeresést együttműködés, weboldal, adatelemzés vagy előadás kapcsán.
+        Írj röviden a célokról, időzítésről és arról, hogy mi jelentene sikert a számodra.
+      </p>
+    </section>
+
+    <div class="form-grid">
+      <!-- BAL: elérhetőségek -->
+      <aside class="card contact-info">
+        <h2>Elérhetőségek</h2>
+        <ul class="contact-list">
+          <li>📧 E-mail: <a href="mailto:you@example.com">you@example.com</a></li>
+          <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">Profilom</a></li>
+          <li>💻 GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">Projektjeim</a></li>
+          <li>📍 Helyszín: Budapest, Magyarország</li>
+        </ul>
+
+        <h3 class="mt">Mit érdemes beleírni?</h3>
+        <ol class="list">
+          <li>Rövid háttér: mi a feladat/probléma?</li>
+          <li>Határidő és költségkeret (ha van elképzelés)</li>
+          <li>Elvárt eredmény: hogyan néz ki a „kész”?</li>
+        </ol>
+
+        <p class="muted small">Válaszidő: 1–2 munkanap.</p>
+      </aside>
+
+      <!-- JOBB: űrlap (mailto) -->
+      <section class="card form-card">
+        <h2>Írj üzenetet</h2>
+        <form id="contactForm" class="form" novalidate>
+          <!-- honeypot anti-spam -->
+          <input type="text" name="hp" autocomplete="off" tabindex="-1" class="hp" aria-hidden="true">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Név *</label>
+              <input id="name" name="name" type="text" class="input" required autocomplete="name" placeholder="Teljes neved">
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail *</label>
+              <input id="email" name="email" type="email" class="input" required autocomplete="email" placeholder="te@pelda.hu">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="topic">Téma</label>
+              <select id="topic" name="topic" class="select">
+                <option>Weboldal</option>
+                <option>Automatizmus &amp; Adatelemzés</option>
+                <option>Előadás</option>
+                <option>Egyéb</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="timing">Időzítés</label>
+              <select id="timing" name="timing" class="select">
+                <option>Néhány héten belül</option>
+                <option>Egy hónapon belül</option>
+                <option>Rugalmas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Üzenet *</label>
+            <textarea id="message" name="message" class="textarea" rows="6" maxlength="1000" required
+                      placeholder="Pár mondat a célokról, háttérről és elvárt eredményről."></textarea>
+            <div class="char-counter"><span id="msgCounter">0</span>/1000</div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--alt">Üzenet küldése</button>
+            <a class="btn" href="mailto:you@example.com?subject=Kapcsolat%20-%20B%C3%A1lint%20Portf%C3%B3li%C3%B3">Megnyitás e-mailben</a>
+          </div>
+
+          <p id="formStatus" class="muted small" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bálint – Portfólió</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+
+  <!-- Mailto küldés (API nélkül) -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const msg = document.getElementById('message');
+      const counter = document.getElementById('msgCounter');
+
+      if (msg && counter) {
+        const update = () => counter.textContent = msg.value.length.toString();
+        msg.addEventListener('input', update); update();
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fd = new FormData(form);
+        if (fd.get('hp')) return; // honeypot
+
+        const name   = (fd.get('name')   || '').toString().trim();
+        const email  = (fd.get('email')  || '').toString().trim();
+        const topic  = (fd.get('topic')  || '').toString();
+        const timing = (fd.get('timing') || '').toString();
+        const body   = (fd.get('message')|| '').toString();
+
+        if (!name || !email || !body) {
+          status.textContent = 'Kérlek töltsd ki a kötelező mezőket (Név, E-mail, Üzenet).';
+          return;
+        }
+
+        const to = 'you@example.com'; // <-- IDE tedd a saját címed!
+        const subject = encodeURIComponent(`Megkeresés — ${topic} — ${name}`);
+        const mailBody = encodeURIComponent(
+          `Név: ${name}\nE-mail: ${email}\nTéma: ${topic}\nIdőzítés: ${timing}\n\nÜzenet:\n${body}\n`
+        );
+
+        window.location.href = `mailto:${to}?subject=${subject}&body=${mailBody}`;
+        status.textContent = 'Megnyitottam az alapértelmezett leveleződet a kitöltött üzenettel.';
+      });
+    })();
+  </script>
+</body>
+</html>

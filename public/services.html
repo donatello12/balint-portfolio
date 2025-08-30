@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Szolgáltatások - Bálint Portfólió</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav__spacer" aria-hidden="true"></div>
+      <nav class="nav__links" role="navigation" aria-label="Fő navigáció">
+        <a class="nav__link" href="./index.html">Kezdőlap</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link active" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./projects.html">Projektek</a>
+        <a class="nav__link" href="./contact.html">Kapcsolat</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Menü" aria-expanded="false"
+              onclick="document.documentElement.classList.toggle('nav-open');
+                       this.setAttribute('aria-expanded',
+                         document.documentElement.classList.contains('nav-open'));">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- TARTALOM -->
+  <main>
+
+    <!-- HERO -->
+    <section class="s-hero card">
+      <h1>Szolgáltatások</h1>
+      <p class="muted">
+        Három területen tudok segíteni: weboldalak, automatizmusok/adatelemzés, előadások.
+      </p>
+    </section>
+
+    <!-- 3 SZOLGÁLTATÁS KÁRTYA -->
+    <section class="service-grid">
+      <!-- Weboldalak -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon">🌐</div>
+          <h2>Weboldalak készítése</h2>
+        </div>
+        <p>
+          Egyedi, gyors és reszponzív bemutatkozó oldalak és portfóliók.
+          Letisztult IA, gyors betöltés, hozzáférhetőség.
+        </p>
+        <ul class="feature-list">
+          <li>Információ-architektúra, szöveg finomhangolás</li>
+          <li>Modern, hozzáférhető front-end (HTML/CSS)</li>
+          <li>Egyszerű szerkeszthetőség igény szerint</li>
+          <li>Alap SEO + teljesítményhangolás</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./projects.html">Nézd meg a projekteket</a>
+          <a class="btn btn--alt" href="./contact.html">Ajánlatot kérek</a>
+        </div>
+      </article>
+
+      <!-- Automatizmusok & Data -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon">⚙️</div>
+          <h2>Automatizmusok &amp; Adatelemzés</h2>
+        </div>
+        <p>
+          Python/SQL alapú folyamatok: adattisztítás, riport-készítés, ismétlődő feladatok kiváltása.
+          Cél: kevesebb hiba, több fókusz a lényegre.
+        </p>
+        <ul class="feature-list">
+          <li>Adattisztítás, transzformáció (Pandas, Excel)</li>
+          <li>Riportok automatizálása (napi/heti PDF, dashboard)</li>
+          <li>Feladat-ütemezés és monitorozás</li>
+          <li>Dokumentáció és tudásátadás</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./projects.html">Minták</a>
+          <a class="btn btn--alt" href="./contact.html">Kapcsolat</a>
+        </div>
+      </article>
+
+      <!-- Előadások -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon">🎤</div>
+          <h2>Előadások</h2>
+        </div>
+        <p>
+          Motiváció/reziliencia (túlélés, újrakezdés) és bevezető adat/tech workshopok.
+          Őszinte, gyakorlatias, bátorító hangnem.
+        </p>
+        <ul class="feature-list">
+          <li>Harc a betegséggel – tanulságok</li>
+          <li>Adatelemzés alapok (Python, tisztítás, vizualizáció)</li>
+          <li>Interaktív formátumok</li>
+          <li>Igény szerinti tematika</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./about.html">Rólam</a>
+          <a class="btn btn--alt" href="./contact.html">Időpontot egyeztetek</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- FOLYAMAT / LÉPÉSEK -->
+    <section class="flow card">
+      <h2>Együttműködés menete</h2>
+      <ol class="flow-steps">
+        <li><span class="step-dot">1</span> Igényfelmérés (rövid hívás vagy üzenetváltás)</li>
+        <li><span class="step-dot">2</span> Javaslat &amp; ütemezés</li>
+        <li><span class="step-dot">3</span> Megvalósítás &amp; visszajelzés</li>
+        <li><span class="step-dot">4</span> Átadás &amp; dokumentáció</li>
+      </ol>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner card">
+      <div class="cta-text">
+        <h2>Készen állsz a következő lépésre?</h2>
+        <p class="muted">Írd meg röviden a célokat és az időzítést — válaszolok.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--alt" href="./contact.html">Kapcsolat</a>
+        <a class="btn" href="./projects.html">Projektek</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bálint – Portfólió</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

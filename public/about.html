@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rólam - Bálint Portfólió</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav">
+    <!-- bal oldali spacer a szimmetriához -->
+    <div class="nav__spacer" aria-hidden="true"></div>
+
+    <!-- középen a linkek -->
+    <nav class="nav__links" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__link" href="./index.html">Kezdőlap</a>
+      <a class="nav__link" href="./about.html">Rólam</a>
+      <a class="nav__link" href="./services.html">Szolgáltatások</a>
+      <a class="nav__link" href="./projects.html">Projektek</a>
+      <a class="nav__link" href="./contact.html">Kapcsolat</a>
+    </nav>
+
+    <!-- mobil hamburger jobb oldalon -->
+    <button class="nav__toggle" aria-label="Menü" aria-expanded="false"
+            onclick="document.documentElement.classList.toggle('nav-open');
+                     this.setAttribute('aria-expanded',
+                       document.documentElement.classList.contains('nav-open')); ">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+  <main>
+    <!-- HERO / FEJ -->
+    <section class="about-hero">
+      <div class="avatar" aria-hidden="true">B</div>
+      <div>
+        <div class="eyebrow">Rólam</div>
+        <h1>Bálint — Data Analyst & fejlesztő</h1>
+        <p class="lead">
+          Mérnökinformatikusként rendszerekben gondolkodom: adatokból tiszta döntéseket, folyamatokból
+          automatizmust építek. Heredaganat-túlélőként megtanultam, hogy fókusz és kitartás visz át a falakon —
+          ugyanezt a szemléletet kapod minden projektnél: tiszta célok, érthető megoldás, mérhető eredmény.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Mérnökinformatikus</span>
+          <span class="chip chip--line">Data Analyst</span>
+          <span class="chip">Automatizmusok</span>
+          <span class="chip">Webfejlesztés</span>
+          <span class="chip">Előadások</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI kártyák -->
+    <section class="kpis kpis--about">
+      <div class="kpi card">
+        <div class="kpi__num">3+ év</div>
+        <div class="kpi__label">adat / automatizmus</div>
+      </div>
+      <div class="kpi card">
+        <div class="kpi__num">BSc</div>
+        <div class="kpi__label">mérnökinformatika</div>
+      </div>
+      <div class="kpi card">
+        <div class="kpi__num">100%</div>
+        <div class="kpi__label">átláthatóság</div>
+      </div>
+    </section>
+
+    <!-- Két oszlop: történet + munkamódszer -->
+    <section class="grid-2">
+      <article class="card">
+        <h2>Történetem – harc és újrakezdés</h2>
+        <p>
+          Heredaganat túlélőként a saját bőrömön tapasztaltam meg, milyen az, amikor a kitartás nem csak
+          szakmai erény, hanem életfeltétel. Ez az élmény megtanított fókuszálni a lényegre, elfogadni a
+          bizonytalanságot, és mindent lépésről lépésre felépíteni. A munkában ugyanezt a hozzáállást alkalmazom:
+          komplex feladatokat bontok le megoldható egységekre, tiszta kommunikációval és transzparens haladással.
+        </p>
+
+        <blockquote class="quote">
+          „A nehézségek nem akadályok, hanem irányítótáblák — mutatják, merre érdemes fejlődni.”
+        </blockquote>
+      </article>
+
+      <article class="card">
+        <h2>Hogyan dolgozom?</h2>
+        <ol class="steps">
+          <li><strong>Felderítés & célkitűzés:</strong> mire van valóban szükség?</li>
+          <li><strong>Prototípus & validáció:</strong> minél előbb visszajelzés.</li>
+          <li><strong>Élesítés:</strong> stabil, dokumentált, karbantartható.</li>
+          <li><strong>Átadás & támogatás:</strong> kérdésekre, igényekre reagálok.</li>
+        </ol>
+
+        <h3 class="mt">Értékek, amikben hiszek</h3>
+        <ul class="list">
+          <li><strong>Kitartás:</strong> a nehéz a normál — ezért tervezzünk okosan.</li>
+          <li><strong>Tisztaság:</strong> egyszerű megoldások, érthető logika, jó dokumentáció.</li>
+          <li><strong>Felelősség:</strong> pontos határidők, reális vállalások, őszinte kommunikáció.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Timeline -->
+    <section class="card">
+      <h2>Rövid timeline</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Mérnökinformatikus — diploma</h3>
+            <p>Erős műszaki alapok: algoritmusok, szoftvertervezés, hálózatok, adatbázisok.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Data Analyst — fókusz</h3>
+            <p>Adattisztítás, riportolás, automatizmusok (Python/SQL/Excel/BI). Cél: mérhető eredmény.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Web & automatizmusok</h3>
+            <p>Portfólió- és bemutatkozó oldalak, kisvállalati folyamatok egyszerűsítése.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="card">
+      <h2>Dolgozzunk együtt</h2>
+      <p class="muted">Ha weboldalra, adatelemzésre, automatizmusokra vagy előadásra van szükséged:</p>
+      <div class="hero__ctas">
+        <a class="btn btn--alt" href="./services.html">Szolgáltatások</a>
+        <a class="btn" href="./contact.html">Kapcsolat</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Bálint</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
