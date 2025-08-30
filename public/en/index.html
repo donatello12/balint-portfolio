@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Bálint Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/buttons.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav__spacer" aria-hidden="true"></div>
+      <nav class="nav__links">
+        <a class="nav__link" href="./index.html">Home</a>
+        <a class="nav__link" href="./about.html">About</a>
+        <a class="nav__link" href="./services.html">Services</a>
+        <a class="nav__link" href="./projects.html">Projects</a>
+        <a class="nav__link" href="./contact.html">Contact</a>
+      </nav>
+
+      <div class="nav__lang">
+        <a class="nav__link" href="../index.html">HU</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false"
+              onclick="document.documentElement.classList.toggle('nav-open');
+                       this.setAttribute('aria-expanded',
+                         document.documentElement.classList.contains('nav-open'));">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__eyebrow">Data • Automation • Web</div>
+      <h1 class="hero__title">
+        Welcome to my portfolio!
+        <span class="hero__title-accent">Tech + Persistence</span>
+      </h1>
+      <!-- 1st paragraph -->
+      <p class="hero__lead">
+        Hi, I’m Bálint — a <strong>Data Analyst</strong> and developer. As an IT engineer I think in systems:
+        turning data into clear decisions and processes into automation.
+      </p>
+
+      <!-- 2nd paragraph -->
+      <p class="hero__lead">
+        As a testicular cancer survivor I’ve learned that focus, persistence, and transparency break down walls —
+        the same mindset I bring into every project: clear goals, understandable solutions, measurable results.
+      </p>
+
+      <div class="hero__ctas">
+        <a class="btn btn--alt" href="./services.html">Services</a>
+        <a class="btn" href="./projects.html">Projects</a>
+        <a class="link-underline" href="./about.html">About →</a>
+      </div>
+
+      <div class="badges">
+        <span class="badge">IT Engineer</span>
+        <span class="badge badge--line">Data Analyst</span>
+        <span class="badge">Automation</span>
+        <span class="badge">Speaking</span>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi__num">3+ years</div>
+          <div class="kpi__label">data/automation</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num">10+ projects</div>
+          <div class="kpi__label">web & reporting</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num">100%</div>
+          <div class="kpi__label">transparency</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT / WHY / HOW -->
+    <section class="grid-3">
+      <article class="card">
+        <h2>What can you find here?</h2>
+        <ul class="list">
+          <li><strong>About:</strong> personal story, professional background and values.</li>
+          <li><strong>Services:</strong> websites, data analysis & automation, speaking.</li>
+          <li><strong>Projects:</strong> case studies, lessons learned, technologies.</li>
+          <li><strong>Contact:</strong> ways to connect and how collaboration works.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Why work with me?</h2>
+        <p><strong>Reliability:</strong> the road to recovery taught me persistence and disciplined problem solving.</p>
+        <p><strong>System thinking:</strong> with an engineering background I quickly see connections and bottlenecks.</p>
+        <p><strong>Result focus:</strong> working with data brings measurable advantages in numbers.</p>
+      </article>
+
+      <article class="card">
+        <h2>How I work in short</h2>
+        <ol class="steps">
+          <li><strong>Understanding the task:</strong> clarifying goals, constraints, metrics.</li>
+          <li><strong>Fast prototype:</strong> tangible demo as soon as possible.</li>
+          <li><strong>Iteration:</strong> fine-tuning based on feedback.</li>
+          <li><strong>Handover:</strong> documentation, knowledge transfer, support.</li>
+        </ol>
+      </article>
+    </section>
+
+    <!-- MAIN AREAS -->
+    <section class="grid-2">
+      <article class="card">
+        <h2>Main areas</h2>
+        <ul class="list">
+          <li>Data cleaning, analysis, visualization (Python/SQL/BI)</li>
+          <li>Automated reports and processes</li>
+          <li>Responsive, fast websites (portfolios, landing pages)</li>
+        </ul>
+        <div class="card-footer">
+          <a class="btn" href="./projects.html">Check out the projects</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Let’s get started!</h2>
+        <p class="muted">
+          Scroll down or use the menu above – start with the <em>About</em> page!
+        </p>
+        <div class="card-footer btn-row">
+          <a class="btn btn--alt" href="./about.html">About</a>
+          <a class="btn" href="./contact.html">Contact</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bálint – Portfolio</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

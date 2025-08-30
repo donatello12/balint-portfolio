@@ -14,13 +14,17 @@
   <header class="site-header">
     <div class="nav">
       <div class="nav__spacer" aria-hidden="true"></div>
-      <nav class="nav__links" role="navigation" aria-label="Fő navigáció">
-        <a class="nav__link" href="./index.html">Kezdőlap</a>
-        <a class="nav__link" href="./about.html">Rólam</a>
-        <a class="nav__link" href="./services.html">Szolgáltatások</a>
-        <a class="nav__link active" href="./projects.html">Projektek</a>
-        <a class="nav__link" href="./contact.html">Kapcsolat</a>
-      </nav>
+<nav class="nav__links">
+  <a class="nav__link" href="./index.html">Kezdőlap</a>
+  <a class="nav__link" href="./about.html">Rólam</a>
+  <a class="nav__link" href="./services.html">Szolgáltatások</a>
+  <a class="nav__link" href="./projects.html">Projektek</a>
+  <a class="nav__link" href="./contact.html">Kapcsolat</a>
+</nav>
+
+<div class="nav__lang">
+  <a class="nav__link" href="./en/projects.html">EN</a>
+</div>
       <button class="nav__toggle" aria-label="Menü" aria-expanded="false"
               onclick="document.documentElement.classList.toggle('nav-open');
                        this.setAttribute('aria-expanded',

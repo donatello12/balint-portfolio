@@ -729,6 +729,7 @@ footer {
   padding: 0 1rem;
   display: flex; align-items: center; justify-content: space-between;
   gap: .75rem;
+  position: relative;
 }
 
 /* Brand */
@@ -1023,3 +1024,32 @@ main a:not(.btn):not(.nav__link):hover,
   min-height:100%;
 }
 .service-card .card-cta{ margin-top:auto; }
+/* Nyelvváltó alap pozíció (desktop) */
+.nav__lang{
+  position: absolute;
+  top: 50%;
+  right: 12px;                 /* teljesen jobb oldal */
+  transform: translateY(-50%);
+  z-index: 2;                  /* a lenyíló fölött maradjon */
+}
+
+/* Stílus: egyezzen a nav pill-ekkel */
+.nav__lang .nav__link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 .75rem;
+  border-radius: 999px;
+  background: rgba(18,24,38,.45);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #EAFBFF;
+  font-weight: 600;
+}
+
+/* Mobil: a hamburger előtt legyen helye */
+@media (max-width: 820px){
+  .nav__lang{
+    right: 56px;               /* 40px burger + ~16px légrés */
+  }
+}
