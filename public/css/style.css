@@ -357,15 +357,20 @@ footer {
   margin: 1rem 0 1.5rem;
 }
 .avatar {
-  width: 110px; height: 110px;
-  display: grid; place-items: center;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  color: #001015; font-weight: 900; font-size: 2rem;
-  background: linear-gradient(135deg, #00E5FF, #7C3AED);
+  overflow: hidden; /* levágja a kép széleit kör alakban */
   box-shadow:
     0 0 0 4px rgba(255,255,255,.06),
     0 8px 30px rgba(0,0,0,.5),
     0 0 40px rgba(0,229,255,.18);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* szépen kitölti, nem torzul */
+  display: block;
 }
 .eyebrow {
   color: var(--muted);
