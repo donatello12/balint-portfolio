@@ -959,3 +959,14 @@ main a:not(.btn):not(.nav__link):hover,
 @media (max-width: 420px){
   .hero__title { font-size: clamp(2.2rem, 8vw + .5rem, 3.2rem); }
 }
+/* ===== Kapcsolat linkek ===== */
+.contact-list a {
+  color: var(--primary);           /* világos cián */
+  text-decoration: none;           /* nincs vonal */
+  font-weight: 600;
+}
+
+.contact-list a:hover {
+  color: var(--secondary);         /* hoverkor lila */
+  text-decoration: none;           /* továbbra se legyen vonal */
+}
