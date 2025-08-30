@@ -411,16 +411,20 @@ footer {
 }
 
 /* A középső vonal a bal oszlop közepén fut (28px széles a bal oszlop -> közepe 14px) */
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 14px;             /* a bal oszlop közepe */
-  top: .2rem;
-  bottom: .2rem;
-  width: 2px;
-  background: linear-gradient(var(--primary), rgba(255,255,255,.14));
-  border-radius: 2px;
+.t-dot {
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: #001015;
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: 4px;
 }
+
 /* Minden elem két oszlop: 28px (pötty) + tartalom */
 .t-item {
   display: grid;
@@ -430,14 +434,20 @@ footer {
 }
 
 .t-dot {
-  width: 12px;
-  height: 12px;
-  margin-top: 6px;        /* igazítás az első sorhoz */
-  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  margin-top: 4px;
+  border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 0 4px rgba(0,229,255,.15), 0 0 18px rgba(0,229,255,.35);
-  justify-self: center;   /* pontosan a 28px-es oszlop közepére */
+  color: #001015;          /* jól olvasható sötét szöveg */
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 3px rgba(0,229,255,.2), 0 4px 12px rgba(0,229,255,.25);
 }
+
 
 .t-content h3 {
   margin: 0 0 .25rem;
@@ -463,12 +473,8 @@ footer {
 /* Szolgáltatás kártya fej – ikon + cím */
 .service-card { padding-bottom: 1rem; }          /* kis belső buffer alul */
 .service-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .4rem; }
-.service-icon {
-  width: 40px; height: 40px; display: grid; place-items: center;
-  border-radius: 12px; color: #001015; font-size: 20px; font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), #66F0FF);
-  box-shadow: 0 6px 18px rgba(0,229,255,.25);
-}
+
+
 
 /* Feature lista – check jelölők */
 .feature-list { list-style: none; padding-left: 0; margin: .6rem 0 0; }
@@ -970,3 +976,45 @@ main a:not(.btn):not(.nav__link):hover,
   color: var(--secondary);         /* hoverkor lila */
   text-decoration: none;           /* továbbra se legyen vonal */
 }
+/* Szolgáltatás fejlécek: egységes sor-magasság és ikon doboz */
+.service-head{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-height:56px;                /* egységes header magasság */
+}
+
+/* Ikon-doboz: fix méret, jó kontraszt, egységes megjelenés */
+.service-icon{
+  flex:0 0 48px;
+  width:48px; height:48px;
+  display:grid; place-items:center;
+  border-radius:12px;
+  background: linear-gradient(135deg, #00E5FF, #A855F7);
+  box-shadow:
+    0 0 0 2px rgba(0,229,255,.35) inset,
+    0 6px 16px rgba(0,229,255,.25);
+}
+
+/* Emoji egységes skálázása (OS-enként eltérő lehet az alapméret) */
+.service-icon .emoji {
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(1px);
+  color: #00E5FF; /* világoskék ikon szín */
+}
+
+
+/* Cím ne tolja szét a sort, ne legyen extra margó */
+.service-head h2{
+  margin:0;
+  line-height:1.25;
+}
+
+/* Kártyák: teljes magasságra nyúlnak, gombok alul maradnak */
+.service-card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+.service-card .card-cta{ margin-top:auto; }
