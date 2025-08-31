@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/form-success.css" />
   <link rel="stylesheet" href="../css/buttons.css">
+  
 </head>
 <body>
 
@@ -86,6 +87,23 @@
               <input id="email" name="email" type="email" class="input" required placeholder="you@example.com">
             </div>
           </div>
+<div class="form-row">
+  <div class="field">
+    <label for="phone">Phone *</label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      class="input"
+      required
+      placeholder="+36 30 123 4567"
+      autocomplete="tel"
+      inputmode="tel"
+      pattern="^\+?[0-9\s\-().]{7,}$"
+      title="Please provide a valid phone number (e.g. +36 30 123 4567)."
+    >
+  </div>
+</div>
 
           <div class="form-row">
             <div class="field">
