@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bálint Portfólió</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kezdőlap - Bálint Portfólió</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/buttons.css">
+
 </head>
 <body>
 
-  <!-- NAV (ide másold a partials/nav.html kódját) -->
+  <!-- NAV -->
+<header class="site-header">
+  <div class="nav">
+    <div class="nav__spacer" aria-hidden="true"></div>
+
 <nav class="nav__links">
   <a class="nav__link" href="./index.html">Kezdőlap</a>
   <a class="nav__link" href="./about.html">Rólam</a>
@@ -21,13 +27,124 @@
   <a class="nav__link" href="./en/index.html">EN</a>
 </div>
 
+    <button class="nav__toggle" aria-label="Menü" aria-expanded="false"
+      onclick="document.documentElement.classList.toggle('nav-open');
+               this.setAttribute('aria-expanded',
+                 document.documentElement.classList.contains('nav-open'));">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <!-- OLDAL TARTALOM (minden oldalnál más lesz) -->
+  <!-- TARTALOM -->
   <main>
-    <h1>Kezdőlap</h1>
-    <p>Ez itt az index oldal tartalma.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__eyebrow">Data • Automation • Web</div>
+      <h1 class="hero__title">
+        Üdv a portfólió oldalamon!
+        <span class="hero__title-accent">Tech + Kitartás</span>
+      </h1>
+  <!-- 1. bekezdés -->
+  <p class="hero__lead">
+    Szia, Bálint vagyok — <strong>Data Analyst</strong> és fejlesztő. Mérnökinformatikusként rendszerekben gondolkodom:
+    adatokból tiszta döntéseket, folyamatokból automatizmust építek.
+  </p>
+
+  <!-- 2. bekezdés -->
+  <p class="hero__lead">
+    Heredaganat-túlélőként megtanultam, hogy fókusz, kitartás és átláthatóság visz át a falakon — ugyanezt a szemléletet
+    kapod minden projektben: tiszta célok, érthető megoldás, mérhető eredmény.
+  </p>
+
+      <div class="hero__ctas">
+        <a class="btn btn--alt" href="./services.html">Szolgáltatások</a>
+        <a class="btn" href="./projects.html">Projektek</a>
+        <a class="link-underline" href="./about.html">Rólam →</a>
+      </div>
+
+      <div class="badges">
+        <span class="badge">Mérnökinformatikus</span>
+        <span class="badge badge--line">Data Analyst</span>
+        <span class="badge">Automatizmusok</span>
+        <span class="badge">Előadások</span>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi__num">3+ év</div>
+          <div class="kpi__label">adat/automatizmus</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num">10+ projekt</div>
+          <div class="kpi__label">web & riport</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num">100%</div>
+          <div class="kpi__label">átláthatóság</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT / WHY / HOW -->
+    <section class="grid-3">
+      <article class="card">
+        <h2>Mit találsz itt?</h2>
+        <ul class="list">
+          <li><strong>Rólam:</strong> személyes történet, szakmai háttér és értékrend.</li>
+          <li><strong>Szolgáltatások:</strong> weboldalak, adatelemzés és automatizmusok, előadások.</li>
+          <li><strong>Projektek:</strong> esettanulmányok, tanulságok, technológiák.</li>
+          <li><strong>Kapcsolat:</strong> elérhetőségek és együttműködés menete.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Miért velem dolgozz?</h2>
+        <p><strong>Megbízhatóság:</strong> a gyógyulásig vezető út megtanított a kitartásra és a fegyelmezett problémamegoldásra.</p>
+        <p><strong>Rendszerszemlélet:</strong> mérnöki háttérrel gyorsan látom az összefüggéseket és a szűk keresztmetszeteket.</p>
+        <p><strong>Eredményfókusz:</strong> az adatokkal történő munka számokban mérhető előnyt ad.</p>
+      </article>
+
+      <article class="card">
+        <h2>Hogyan dolgozom röviden</h2>
+        <ol class="steps">
+          <li><strong>Feladat megértése:</strong> célok, korlátok, mérőszámok tisztázása.</li>
+          <li><strong>Gyors prototípus:</strong> kézzelfogható demó mielőbb.</li>
+          <li><strong>Iteráció:</strong> visszajelzés alapján finomhangolás.</li>
+          <li><strong>Átadás:</strong> dokumentáció, tudásátadás, support.</li>
+        </ol>
+      </article>
+    </section>
+
+    <!-- FŐ TERÜLETEK -->
+    <section class="grid-2">
+      <article class="card">
+        <h2>Fő területek</h2>
+        <ul class="list">
+          <li>Adattisztítás, elemzés, vizualizáció (Python/SQL/BI)</li>
+          <li>Automatizált riportok és folyamatok</li>
+          <li>Reszponzív, gyors weboldalak (portfóliók, bemutatkozó oldalak)</li>
+        </ul>
+<div class="card-footer">
+  <a class="btn" href="./projects.html">Nézd meg a projekteket</a>
+</div>
+      </article>
+
+      <article class="card">
+        <h2>Induljunk!</h2>
+        <p class="muted">
+          Görgess tovább vagy válaszd a fenti menüt – kezdjük az <em>Rólam</em> oldallal!
+        </p>
+<div class="card-footer btn-row">
+  <a class="btn btn--alt" href="./about.html">Rólam</a>
+  <a class="btn" href="./contact.html">Kapcsolat</a>
+</div>
+
+      </article>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Bálint – Portfólió</p>
   </footer>
