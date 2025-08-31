@@ -3,14 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kapcsolat - Bálint Portfólió</title>
-  <meta name="description" content="Vedd fel velem a kapcsolatot webfejlesztés, adatelemzés vagy együttműködés kapcsán.">
+
+  <title>Kapcsolat – Bakos Bálint Portfólió</title>
+  <meta name="description" content="Vedd fel velem a kapcsolatot webfejlesztés, adatelemzés vagy együttműködés kapcsán. Budapest és online.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bakosbalint.hu/contact.html" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="hu" href="https://bakosbalint.hu/contact.html" />
+  <link rel="alternate" hreflang="en" href="https://bakosbalint.hu/en/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bakosbalint.hu/contact.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bakosbalint.hu/contact.html" />
+  <meta property="og:title" content="Kapcsolat – Bakos Bálint Portfólió" />
+  <meta property="og:description" content="Vedd fel velem a kapcsolatot webfejlesztés, adatelemzés vagy együttműködés kapcsán. Budapest és online." />
+  <meta property="og:site_name" content="Bakos Bálint Portfólió" />
+  <meta property="og:locale" content="hu_HU" />
+
+  <!-- Social profiles -->
+  <link rel="me" href="https://www.facebook.com/balint.bakos.372?locale=hu_HU" />
+  <link rel="me" href="https://www.linkedin.com/in/b%C3%A1lint-bakos-78737b245/" />
 
   <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/form-success.css" />
-<link rel="stylesheet" href="./css/buttons.css">
-
+  <link rel="stylesheet" href="./css/form-success.css" />
+  <link rel="stylesheet" href="./css/buttons.css" />
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -95,18 +116,18 @@
 <div class="form-row">
   <div class="field">
     <label for="phone">Telefonszám *</label>
-    <input
-      id="phone"
-      name="phone"
-      type="tel"
-      class="input"
-      required
-      placeholder="+36 30 123 4567"
-      autocomplete="tel"
-      inputmode="tel"
-      pattern="^\+?[0-9\s\-().]{7,}$"
-      title="Kérlek, adj meg valós telefonszámot (pl. +36 30 123 4567)."
-    >
+<input
+  id="phone"
+  name="phone"
+  type="tel"
+  class="input"
+  required
+  placeholder="+36 30 123 4567"
+  autocomplete="tel"
+  inputmode="tel"
+  pattern="^(?:(?:\+36|06)\s?(?:1\s?\d{3}\s?\d{4}|[2-9]\d\s?\d{3}\s?\d{4}))$"
+  title="Kérlek, adj meg magyar számod: pl. +36 30 123 4567 vagy 06301234567."
+>
   </div>
 </div>
 
@@ -157,6 +178,40 @@
   </footer>
 
   <script src="./js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  const phone = document.getElementById('phone');
+  if (!form || !phone) return;
+
+  // Írás közben töröljük az idegen karaktereket (pl. aposztróf)
+  phone.addEventListener('input', () => {
+    // engedélyezett: számok, +, szóköz
+    const cleaned = phone.value
+      .replace(/[^0-9+\s]/g, '')   // pl. ' (aposztróf), -, (), stb. ki
+      .replace(/\s{2,}/g, ' ')     // több szóköz -> egy
+      .trim();
+    if (cleaned !== phone.value) phone.value = cleaned;
+
+    // natív minta alapján jelzés
+    if (phone.value === '' || phone.checkValidity()) {
+      phone.setCustomValidity('');
+    } else {
+      phone.setCustomValidity('Formátum: +36 30 123 4567 vagy 06301234567');
+    }
+  });
+
+  // Küldéskor végső ellenőrzés
+  form.addEventListener('submit', (e) => {
+    const hp = form.querySelector('input[name="hp"]');
+    if (hp && hp.value) { e.preventDefault(); return; } // honeypot
+    if (!phone.checkValidity()) {
+      e.preventDefault();
+      phone.reportValidity();
+    }
+  });
+});
+</script>
 
 </body>
 </html>

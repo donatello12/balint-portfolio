@@ -188,10 +188,62 @@ footer {
   font-size: .85rem;
 }
 .badge--line { border-color: var(--primary); }
-.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
-.kpi { background: var(--surface); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: .9rem; text-align: center; }
-.kpi__num { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
-.kpi__label { color: var(--muted); font-size: .9rem; }
+/* ======= KPIs – rugalmas és mobilbarát ======= */
+.kpis{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* rugalmas oszlopok */
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.kpi{
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: .9rem;
+  text-align: center;
+
+  /* fontos a tördeléshez/kilógás ellen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;                 /* <<< ez akadályozza meg a kilógást gridben */
+}
+
+.kpi__num{
+  font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.kpi__label{
+  color: var(--muted);
+  font-size: clamp(.85rem, 2.8vw, .95rem);
+  line-height: 1.25;
+  margin-top: .2rem;
+
+  /* agresszívebb tördelés hosszú szavaknál is */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* Mobil – általános: 2 oszlop, kisebb padding */
+@media (max-width: 560px){
+  .kpis{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem;
+  }
+  .kpi{ padding: .75rem; }
+}
+
+/* Extra kicsi kijelző: 1 oszlop */
+@media (max-width: 360px){
+  .kpis{ grid-template-columns: 1fr; }
+  .kpi{ padding: .7rem; }
+}
 
 /* ======= Lists & Steps ======= */
 .list { padding-left: 1.1rem; }
@@ -1052,4 +1104,36 @@ main a:not(.btn):not(.nav__link):hover,
   .nav__lang{
     right: 56px;               /* 40px burger + ~16px légrés */
   }
+}
+/* ===== CTA banner – mobilon oszlopos ===== */
+@media (max-width: 700px){
+  .cta-banner{
+    grid-template-columns: 1fr;   /* egy oszlop */
+    align-items: start;
+    gap: .9rem;
+    text-align: left;              /* ha inkább középre kéred: text-align:center; */
+  }
+
+  .cta-text{ order: 1; }
+
+  .cta-actions{
+    order: 2;
+    display: grid;
+    grid-template-columns: 1fr;   /* gombok egymás alatt */
+    gap: .6rem;
+    justify-self: stretch;        /* nyúljon ki a kártya szélességére */
+    width: 100%;
+  }
+
+  .cta-actions .btn{
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+  }
+}
+
+/* Extra kicsin még szorosabban */
+@media (max-width: 380px){
+  .cta-banner{ gap: .75rem; }
+  .cta-actions .btn{ min-height: 46px; }
 }
