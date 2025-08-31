@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Bálint Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/form-success.css" />
+  <link rel="stylesheet" href="../css/buttons.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav__spacer" aria-hidden="true"></div>
+      <nav class="nav__links">
+        <a class="nav__link" href="./index.html">Home</a>
+        <a class="nav__link" href="./about.html">About</a>
+        <a class="nav__link" href="./services.html">Services</a>
+        <a class="nav__link" href="./projects.html">Projects</a>
+        <a class="nav__link" href="./contact.html">Contact</a>
+      </nav>
+
+      <div class="nav__lang">
+        <a class="nav__link" href="../contact.html">HU</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false"
+              onclick="document.documentElement.classList.toggle('nav-open');
+                       this.setAttribute('aria-expanded',
+                         document.documentElement.classList.contains('nav-open')); ">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="card intro">
+      <h1>Contact</h1>
+      <p class="muted">
+        I’d be happy to hear from you regarding collaboration, websites, data analysis, or speaking.  
+        Please write briefly about your goals, timing, and what success would look like for you.
+      </p>
+    </section>
+
+    <div class="form-grid">
+      <!-- LEFT: contact info -->
+      <aside class="card contact-info">
+        <h2>Contact Details</h2>
+        <ul class="contact-list">
+          <li>📧 Email: <a href="mailto:balintadambakos@gmail.com">balintadambakos@gmail.com</a></li>
+          <li>📞 Phone: <a href="tel:+36303616682">+36 30 361 6682</a></li>
+          <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/b%C3%A1lint-bakos-78737b245/" target="_blank" rel="noopener">My profile</a></li>
+          <li>📍 Location: Budapest, Hungary</li>
+        </ul>
+
+        <h3 class="mt">What to include?</h3>
+        <ol class="list">
+          <li>Short background: what’s the task/problem?</li>
+          <li>Deadline and budget (if you have an idea)</li>
+          <li>Expected outcome: what does “done” look like?</li>
+        </ol>
+
+        <p class="muted small">Response time: 1–2 business days.</p>
+      </aside>
+
+      <!-- RIGHT: form -->
+      <section class="card form-card">
+        <h2>Send a Message</h2>
+        <form id="contactForm" action="https://formsubmit.co/balintadambakos@gmail.com" method="POST" class="form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="">
+          <!-- honeypot -->
+          <input type="text" name="hp" autocomplete="off" tabindex="-1" class="hp" aria-hidden="true">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" class="input" required placeholder="Your full name">
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" class="input" required placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic" class="select">
+                <option>Website</option>
+                <option>Automation & Data Analysis</option>
+                <option>Speaking</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="timing">Timing</label>
+              <select id="timing" name="timing" class="select">
+                <option>Within a few weeks</option>
+                <option>Within a month</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" class="textarea" rows="6" maxlength="1000" required
+              placeholder="A few sentences about your goals, background and expected outcome."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--alt">Send Message</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div id="form-success" class="form-success hidden">
+      <h3>✅ Thank you for your message!</h3>
+      <p>I will get back to you shortly via email.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bálint – Portfolio</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

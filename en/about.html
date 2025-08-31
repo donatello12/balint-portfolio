@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Bálint Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/buttons.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav">
+    <div class="nav__spacer" aria-hidden="true"></div>
+
+    <nav class="nav__links">
+      <a class="nav__link" href="./index.html">Home</a>
+      <a class="nav__link" href="./about.html">About</a>
+      <a class="nav__link" href="./services.html">Services</a>
+      <a class="nav__link" href="./projects.html">Projects</a>
+      <a class="nav__link" href="./contact.html">Contact</a>
+    </nav>
+
+    <div class="nav__lang">
+      <a class="nav__link" href="../about.html">HU</a>
+    </div>
+
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false"
+            onclick="document.documentElement.classList.toggle('nav-open');
+                     this.setAttribute('aria-expanded',
+                       document.documentElement.classList.contains('nav-open')); ">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="avatar">
+      <img src="../img/me.jpg" alt="Bakos Bálint" />
+    </div>
+    <div>
+      <div class="eyebrow">About</div>
+      <h1>Bálint — Data Analyst & Developer</h1>
+      <p class="lead">
+        As an IT engineer I think in systems: turning data into clear decisions, processes into automation.  
+        As a testicular cancer survivor I learned that focus and persistence break down walls — the same mindset  
+        you’ll get in every project: clear goals, understandable solutions, measurable results.
+      </p>
+
+      <div class="chips">
+        <span class="chip">IT Engineer</span>
+        <span class="chip chip--line">Data Analyst</span>
+        <span class="chip">Automation</span>
+        <span class="chip">Web Development</span>
+        <span class="chip">Speaking</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI cards -->
+  <section class="kpis kpis--about">
+    <div class="kpi card">
+      <div class="kpi__num">3+ years</div>
+      <div class="kpi__label">data / automation</div>
+    </div>
+    <div class="kpi card">
+      <div class="kpi__num">BSc</div>
+      <div class="kpi__label">Computer Engineering</div>
+    </div>
+    <div class="kpi card">
+      <div class="kpi__num">100%</div>
+      <div class="kpi__label">transparency</div>
+    </div>
+  </section>
+
+  <!-- Two-column: story + work style -->
+  <section class="grid-2">
+    <article class="card">
+      <h2>My Story – Struggle and Restart</h2>
+      <p>
+        As a testicular cancer survivor I experienced firsthand what it means when persistence is not just  
+        a professional virtue, but a condition for life itself. This experience taught me to focus on the essence,  
+        accept uncertainty, and build everything step by step.  
+        I apply the same approach in work: breaking down complex tasks into solvable units,  
+        with clear communication and transparent progress.
+      </p>
+
+      <blockquote class="quote">
+        “Difficulties are not obstacles, but signposts — showing where it’s worth developing.”
+      </blockquote>
+    </article>
+
+    <article class="card">
+      <h2>How do I work?</h2>
+      <ol class="steps">
+        <li><strong>Exploration & goal setting:</strong> what is really needed?</li>
+        <li><strong>Prototype & validation:</strong> early feedback as soon as possible.</li>
+        <li><strong>Deployment:</strong> stable, documented, maintainable.</li>
+        <li><strong>Handover & support:</strong> responsive to questions and needs.</li>
+      </ol>
+
+      <h3 class="mt">Values I believe in</h3>
+      <ul class="list">
+        <li><strong>Persistence:</strong> the hard is normal — so let’s plan smart.</li>
+        <li><strong>Clarity:</strong> simple solutions, clear logic, good documentation.</li>
+        <li><strong>Responsibility:</strong> accurate deadlines, realistic commitments, honest communication.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Timeline -->
+  <section class="card">
+    <h2>Short Timeline</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-dot">1</div>
+        <div class="t-content">
+          <h3>IT Engineer — Degree</h3>
+          <p>Strong technical foundations: algorithms, software design, networks, databases.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-dot">2</div>
+        <div class="t-content">
+          <h3>Data Analyst — Focus</h3>
+          <p>Data cleaning, reporting, automation (Python/SQL/Excel/BI). Goal: measurable results.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-dot">3</div>
+        <div class="t-content">
+          <h3>Web & Automation</h3>
+          <p>Portfolio and landing websites, simplifying small business processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="card">
+    <h2>Let’s Work Together</h2>
+    <p class="muted">If you need a website, data analysis, automation or a talk:</p>
+    <div class="hero__ctas">
+      <a class="btn btn--alt" href="./services.html">Services</a>
+      <a class="btn" href="./contact.html">Contact</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2025 Bálint</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services - Bálint Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/buttons.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav__spacer" aria-hidden="true"></div>
+      <nav class="nav__links">
+        <a class="nav__link" href="./index.html">Home</a>
+        <a class="nav__link" href="./about.html">About</a>
+        <a class="nav__link" href="./services.html">Services</a>
+        <a class="nav__link" href="./projects.html">Projects</a>
+        <a class="nav__link" href="./contact.html">Contact</a>
+      </nav>
+
+      <!-- Nyelvváltó a jobb szélre -->
+  <div class="nav__lang">
+    <a class="nav__link" href="../services.html">HU</a>
+  </div>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false"
+              onclick="document.documentElement.classList.toggle('nav-open');
+                       this.setAttribute('aria-expanded',
+                         document.documentElement.classList.contains('nav-open')); ">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <section class="s-hero card">
+      <h1>Services</h1>
+      <p class="muted">
+        I can help in three areas: websites, automation/data analysis, and speaking.
+      </p>
+    </section>
+
+    <!-- 3 SERVICE CARDS -->
+    <section class="service-grid">
+      <!-- Websites -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon"><span class="emoji">💻</span></div>
+          <h2>Website Development</h2>
+        </div>
+        <p>
+          Custom, fast and responsive personal websites and portfolios.  
+          Clean information architecture, fast loading, accessibility.
+        </p>
+        <ul class="feature-list">
+          <li>Information architecture, text refinement</li>
+          <li>Modern, accessible front-end (HTML/CSS)</li>
+          <li>Simple editing if required</li>
+          <li>Basic SEO + performance optimization</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./projects.html">Samples</a>
+          <a class="btn btn--alt" href="./contact.html">Contact</a>
+        </div>
+      </article>
+
+      <!-- Automation & Data -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon"><span class="emoji">⚙️</span></div>
+          <h2>Automation & Data Analysis</h2>
+        </div>
+        <p>
+          Python/SQL-based processes: data cleaning, reporting, replacing repetitive tasks.  
+          Goal: fewer errors, more focus on what matters.
+        </p>
+        <ul class="feature-list">
+          <li>Data cleaning, transformation (Pandas, Excel)</li>
+          <li>Automated reporting (daily/weekly PDF, dashboard)</li>
+          <li>Task scheduling and monitoring</li>
+          <li>Documentation and knowledge transfer</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./projects.html">Samples</a>
+          <a class="btn btn--alt" href="./contact.html">Contact</a>
+        </div>
+      </article>
+
+      <!-- Speaking -->
+      <article class="service-card card">
+        <div class="service-head">
+          <div class="service-icon"><span class="emoji">🎤</span></div>
+          <h2>Speaking</h2>
+        </div>
+        <p>
+          Motivation & resilience (survival, restart).  
+          Honest, practical, encouraging tone.
+        </p>
+        <ul class="feature-list">
+          <li>Fighting illness – key lessons</li>
+          <li>Interactive formats</li>
+          <li>Custom topics on request</li>
+        </ul>
+        <div class="card-cta">
+          <a class="btn" href="./about.html">About</a>
+          <a class="btn btn--alt" href="./contact.html">Contact</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROCESS / STEPS -->
+    <section class="flow card">
+      <h2>Collaboration Process</h2>
+      <ol class="flow-steps">
+        <li><span class="step-dot">1</span> Needs assessment (short call or messages)</li>
+        <li><span class="step-dot">2</span> Proposal & timeline</li>
+        <li><span class="step-dot">3</span> Implementation & feedback</li>
+        <li><span class="step-dot">4</span> Delivery & documentation</li>
+      </ol>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner card">
+      <div class="cta-text">
+        <h2>Ready for the next step?</h2>
+        <p class="muted">Write me briefly about your goals and timing — I’ll reply.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--alt" href="./contact.html">Contact</a>
+        <a class="btn" href="./projects.html">Projects</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bálint – Portfolio</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
