@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Magyar oldalak -->
+  <url><loc>https://bakosbalint.hu/</loc></url>
+    <url><loc>https://bakosbalint.hu/index.html</loc></url>
+
+  <url><loc>https://bakosbalint.hu/about.html</loc></url>
+  <url><loc>https://bakosbalint.hu/services.html</loc></url>
+  <url><loc>https://bakosbalint.hu/projects.html</loc></url>
+  <url><loc>https://bakosbalint.hu/contact.html</loc></url>
+
+  <!-- Angol oldalak -->
+  <url><loc>https://bakosbalint.hu/en/index.html</loc></url>
+  <url><loc>https://bakosbalint.hu/en/about.html</loc></url>
+  <url><loc>https://bakosbalint.hu/en/services.html</loc></url>
+  <url><loc>https://bakosbalint.hu/en/projects.html</loc></url>
+  <url><loc>https://bakosbalint.hu/en/contact.html</loc></url>
+</urlset>
