@@ -32,7 +32,18 @@ nav a {
   font-weight: 600;
   letter-spacing: .2px;
   transition: color .2s ease, text-shadow .2s ease;
+  
 }
+.nav .nav__link { margin: 0 !important; }
+@media (max-width: 820px) {
+  .nav__links {
+    /* régi: padding: .75rem; */
+    padding-block: .75rem;
+    padding-inline: 1rem;        /* <<< két oldalt ugyanakkora */
+    box-sizing: border-box;
+  }
+}
+
 nav a:hover {
   color: var(--primary);
   text-shadow: 0 0 10px rgba(0,229,255,.6);
@@ -1111,7 +1122,7 @@ main a:not(.btn):not(.nav__link):hover,
     grid-template-columns: 1fr;   /* egy oszlop */
     align-items: start;
     gap: .9rem;
-    text-align: left;              /* ha inkább középre kéred: text-align:center; */
+    text-align: left;              
   }
 
   .cta-text{ order: 1; }
@@ -1136,4 +1147,33 @@ main a:not(.btn):not(.nav__link):hover,
 @media (max-width: 380px){
   .cta-banner{ gap: .75rem; }
   .cta-actions .btn{ min-height: 46px; }
+}
+/* ===== Függőleges spacing fixek ===== */
+:root{
+  --card-gap: 16px;      /* kártyák közti egységes távolság */
+  --section-gap: 24px;   /* nagyobb blokk(ok) közti távolság */
+}
+
+/* Standalone kártyák: kapjanak egységes külső margót felül és alul */
+.card{
+  margin-block: var(--card-gap);
+}
+
+/* De: rácsokban/flex gridben NE kapjanak plusz margót (a gap elég) */
+.projects .project,
+.projects > .card,
+.service-grid > .service-card {
+  margin: 0 !important;
+}
+/* A main-en belüli egymást követő nagy blokkok közt legyen fix köz */
+main > * + *{
+  margin-top: var(--section-gap);
+}
+
+/* Az utolsó főblokk alatt is maradjon levegő (a footer előtt) */
+main > :last-child{
+  margin-bottom: max(var(--section-gap), 2rem);
+}
+main > .card + .card{
+  margin-top: calc(var(--section-gap) - var(--card-gap)) !important;
 }
