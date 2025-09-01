@@ -1,0 +1,229 @@
+/* ===========================
+   SERVICES (Szolgáltatások)
+   =========================== */
+.s-hero{
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 1rem;
+  padding: 2.4rem 1rem 1.4rem; /* kicsi vízszintes puffer telefonra is */
+}
+
+/* mini alcím – „chip” stílus */
+.s-hero .eyebrow{
+  display: inline-block;
+  padding: .28rem .7rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: #001015;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 8px 22px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.06) inset;
+}
+
+/* főcím – reszponzív méret + finom „glow” vonal alatta */
+.s-hero h1{
+  margin: .7rem auto .6rem;
+  font-size: clamp(1.9rem, 1.6rem + 2.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -.2px;
+  color: var(--text);
+  max-width: 20ch;
+  position: relative;
+}
+.s-hero h1::after{
+  content:"";
+  display:block;
+  width: 120px;
+  height: 3px;
+  margin: .6rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 20px rgba(0,229,255,.35);
+}
+
+/* bevezető szöveg – jól olvasható sorhossz, középre */
+.s-hero .lead{
+  max-width: 65ch;
+  margin: .6rem auto 0;
+  font-size: clamp(1rem, .96rem + .4vw, 1.1rem);
+  line-height: 1.7;
+  color: #EAFBFF;
+  opacity: .96;
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+/* finom spacings mobilon */
+@media (max-width: 640px){
+  .s-hero{ padding: 1.8rem .9rem 1rem; }
+  .s-hero h1::after{ width: 96px; height: 2px; }
+}
+
+/* akadálymentesség: kevesebb csillogás, ha kérik */
+@media (prefers-reduced-motion: reduce){
+  .s-hero .eyebrow, .s-hero h1::after{ box-shadow: none; }
+}
+
+
+.s-hero .lead{ max-width: 70ch; opacity: .95; }
+.section-title{
+  margin: .5rem 0 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary);
+}
+
+/* Kártyarács */
+.service-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 1000px){ .service-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){ .service-grid{ grid-template-columns: 1fr; } }
+
+/* Kártya */
+.service-card{
+  position: relative;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  padding: 1rem;
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease;
+}
+.service-card:hover{
+  transform: translateY(-6px);
+  border-color: var(--secondary);
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.45),
+    0 0 0 2px rgba(102,174,238,.18);
+}
+
+/* Fej & ikon */
+.service-head{
+  display: flex; align-items: center; gap: .6rem; margin-bottom: .4rem;
+}
+.service-head h3{ margin: 0; line-height: 1.2; color: var(--text); }
+.service-icon{
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 12px; font-size: 20px;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: #001015; font-weight: 900;
+  box-shadow: 0 6px 18px rgba(0,94,184,.25);
+}
+
+/* Lista + CTA */
+.feature-list{ list-style: none; margin: .5rem 0 0; padding: 0; }
+.feature-list li{
+  position: relative; padding-left: 1.2rem; margin: .35rem 0;
+}
+.feature-list li::before{
+  content: "✔"; position: absolute; left: 0; top: 0.05rem;
+  width: 1rem; height: 1rem; line-height: 1rem; text-align: center;
+  border-radius: 999px; font-size: .78rem; font-weight: 900;
+  color: #001015; background: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(102,174,238,.22);
+}
+
+.card-cta{
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .6rem; margin-top: .9rem;
+}
+@media (max-width: 700px){ .card-cta{ grid-template-columns: 1fr; } }
+
+/* Folyamat + CTA banner */
+.flow{ margin-top: 1.6rem; }
+.flow-steps{
+  list-style: none; padding-left: 0; margin: .4rem 0 1rem;
+  display: grid; gap: .5rem;
+}
+.step-dot{
+  display: inline-grid; place-items: center; margin-right: .5rem;
+  width: 28px; height: 28px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001015; font-weight: 900;
+  box-shadow: 0 0 0 3px rgba(0,94,184,.25), 0 6px 16px rgba(0,94,184,.22);
+}
+.cta-banner{
+  display: grid; grid-template-columns: 1fr auto; align-items: center;
+  gap: 1rem; margin-top: 1rem; position: relative;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  padding: 1rem;
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+}
+.cta-actions{ display: flex; gap: .6rem; flex-wrap: wrap; }
+
+/* Apró megjegyzés */
+.tiny{ font-size: .85rem; }
+.note{ margin-top: .6rem; }
+/* =========================
+   MOBIL FINOMHANGOLÁSOK
+   ========================= */
+
+/* 1) Hero tipó és tördelés mobilon */
+@media (max-width: 640px){
+  .s-hero{ padding: 1.8rem 0 1rem; }
+  .s-hero h1{
+    margin: 0 0 .5rem;
+    font-size: clamp(1.6rem, 4.2vw + 1rem, 2rem);
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+  .s-hero .lead{
+    max-width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+  .hero__ctas{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .6rem;
+    justify-items: stretch;
+    margin-top: .9rem;
+  }
+  .hero__ctas .btn{ width: 100%; min-height: 48px; }
+}
+
+/* 2) CTA banner: gombok a szöveg ALÁ mobilon */
+@media (max-width: 700px){
+  .cta-banner{
+    grid-template-columns: 1fr;   /* egy oszlop: előbb szöveg, alatta gombok */
+    text-align: left;
+  }
+  .cta-actions{
+    display: grid;
+    grid-template-columns: 1fr;   /* gombok egymás alatt */
+    gap: .6rem;
+    justify-self: stretch;
+    width: 100%;
+  }
+  .cta-actions .btn{
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+  }
+}
+
+/* 3) Kisebb tablet breakpoint – szebb törés a rácson */
+@media (max-width: 900px){
+  .service-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .service-grid{ grid-template-columns: 1fr; }
+}
+
+/* 4) Apró spacing finomítások mobilon */
+@media (max-width: 640px){
+  .service-card{ padding: .9rem; }
+  .feature-list{ margin-top: .4rem; }
+  .card-cta{ gap: .5rem; }
+}

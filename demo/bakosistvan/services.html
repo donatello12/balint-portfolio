@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Szolgáltatások – Bakos István Péter</title>
+
+  <!-- Globális CSS -->
+  <link rel="stylesheet" href="./css/00-reset.css">
+  <link rel="stylesheet" href="./css/01-tokens.css">
+  <link rel="stylesheet" href="./css/02-base.css">
+  <link rel="stylesheet" href="./css/03-layout.css">
+  <link rel="stylesheet" href="./css/04-components.css">
+  <!-- Oldalspecifikus CSS -->
+  <link rel="stylesheet" href="./css/pages/services.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav container" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__brand" href="./index.html">Bakos István Péter</a>
+      <div id="primary-nav" class="nav__links">
+        <a class="nav__link" href="./index.html">Főoldal</a>
+        <a class="nav__link active" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link" href="./contact.html">Kapcsolat</a>
+      </div>
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO / bevezető -->
+    <section class="container s-hero">
+      <p class="eyebrow">Biztonság. Tapasztalat. Allianz háttér.</p>
+      <h1>Szolgáltatások</h1>
+      <p class="lead">
+        Lakossági és vállalati biztosítási megoldások – személyre szabott tanácsadással,
+        érthetően, papírmunka-teher nélkül. Az alábbi területeken segítek ajánlatot kérni,
+        összehasonlítani és szerződni.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="./contact.html">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v2H5V4a2 2 0 0 1 2-2zm12 6H5v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zm-4 3h2v2h-2v-2zm-4 0h2v2h-2v-2zm-4 0h2v2H7v-2z"/></svg>
+          Időpontot kérek
+        </a>
+        <a class="btn btn--glass" href="#lakossagi">Lakossági megoldások</a>
+      </div>
+    </section>
+
+    <!-- Lakossági -->
+    <section id="lakossagi" class="container">
+      <h2 class="section-title">Lakossági biztosítások</h2>
+      <div class="service-grid">
+        <!-- Életbiztosítás -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🛡️</div>
+            <h3>Kockázati életbiztosítás</h3>
+          </div>
+          <p class="muted">Családvédelem váratlan élethelyzetekre.</p>
+          <ul class="feature-list">
+            <li>Haláleseti és választható rokkantsági fedezet</li>
+            <li>Rugalmas biztosítási összeg és díjfizetés</li>
+            <li>Hitel- és családi biztonsági megoldások</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Egészség -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🏥</div>
+            <h3>Egészség- és balesetbiztosítás</h3>
+          </div>
+          <p class="muted">Gyors ellátás, diagnosztika, műtéti és baleseti fedezet.</p>
+          <ul class="feature-list">
+            <li>Várólista-csökkentés, magánorvosi szolgáltatók</li>
+            <li>Napi térítés, műtéti térítés, kórházi ellátás</li>
+            <li>Családi csomagok, gyermek opciók</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Utas -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">✈️</div>
+            <h3>Utasbiztosítás</h3>
+          </div>
+          <p class="muted">Gondtalan utazás Európába és világszerte.</p>
+          <ul class="feature-list">
+            <li>Egészségügyi költségek és poggyász</li>
+            <li>Sport, sí és extrém opciók</li>
+            <li>Éves többszöri utazásra szóló csomag</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Lakás -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🏠</div>
+            <h3>Lakás- és vagyonbiztosítás</h3>
+          </div>
+          <p class="muted">Ingatlan és ingóságok komplex védelme.</p>
+          <ul class="feature-list">
+            <li>Tűz, elemi károk, betörés, üvegtörés</li>
+            <li>Felelősség és lakás-assistance</li>
+            <li>Bővíthető kiegészítőkkel (pl. műszaki eszköz)</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Gépjármű -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🚗</div>
+            <h3>Kötelező & CASCO</h3>
+          </div>
+          <p class="muted">Gépjármű felelősség és saját kár védelme.</p>
+          <ul class="feature-list">
+            <li>KGFB, CASCO, üvegkár, lopáskár</li>
+            <li>0–24 assistance, csereautó opció</li>
+            <li>Flotta kedvezmények több autóra</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Nyugdíj / megtakarítás -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🏦</div>
+            <h3>Nyugdíj- és megtakarítási megoldások</h3>
+          </div>
+          <p class="muted">Hosszú távú pénzügyi célok biztosítási köntösben.</p>
+          <ul class="feature-list">
+            <li>Nyugdíj-célú programok</li>
+            <li>Célmegtakarítás gyermekre, lakásra</li>
+            <li>Befektetési portfóliók kockázati szint szerint</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Jogvédelem -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">⚖️</div>
+            <h3>Jogvédelmi biztosítás</h3>
+          </div>
+          <p class="muted">Jogi képviselet és költségek meghatározott ügyekben.</p>
+          <ul class="feature-list">
+            <li>Közlekedési, munkajogi, fogyasztóvédelmi esetek</li>
+            <li>Tanácsadás és peres költségek térítése</li>
+            <li>Családi és vállalkozói csomagok</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Érdekel</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Vállalati -->
+    <section id="vallalati" class="container">
+      <h2 class="section-title">Vállalati biztosítások</h2>
+      <div class="service-grid">
+        <!-- Vagyon -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🏭</div>
+            <h3>Vagyon- és üzemszünet biztosítás</h3>
+          </div>
+          <p class="muted">Telephely, készlet, berendezés védelme – bevételkiesésre is.</p>
+          <ul class="feature-list">
+            <li>Elemi károk, betöréses lopás, géptörés</li>
+            <li>Üzemszünet fedezet fix költségekre</li>
+            <li>Telephelyre szabott limitek</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Kérek felmérést</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Felelősség -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🤝</div>
+            <h3>Felelősségbiztosítás</h3>
+          </div>
+          <p class="muted">Általános, termék- és szakmai felelősség különböző ágazatokra.</p>
+          <ul class="feature-list">
+            <li>Ügyfél- és harmadik fél károk</li>
+            <li>Szakmai mulasztás, tervezői felelősség</li>
+            <li>Környezeti kár opció</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Ajánlatot kérek</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Flotta -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🚚</div>
+            <h3>Flotta (KGFB & CASCO)</h3>
+          </div>
+          <p class="muted">Flottakedvezmények személy- és haszongépjárműre.</p>
+          <ul class="feature-list">
+            <li>Egységes kezelés, egyszerű adminisztráció</li>
+            <li>Assistance és üvegkár csomagok</li>
+            <li>Rugalmasság járműcserénél</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Kérek kalkulációt</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Építés-szerelés -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🏗️</div>
+            <h3>Építés-szerelés biztosítás</h3>
+          </div>
+          <p class="muted">CAR/EAR fedezet kivitelezőknek, beruházóknak.</p>
+          <ul class="feature-list">
+            <li>Építési-szerelési kockázatok a teljes projektidőre</li>
+            <li>Felelősségi és alvállalkozói kiterjesztések</li>
+            <li>Vandalizmus, elemi károk opciók</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Műszaki egyeztetés</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Kiber -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">🛜</div>
+            <h3>Kiberkockázati biztosítás</h3>
+          </div>
+          <p class="muted">Adat-, rendszer- és üzemszüneti károk enyhítésére.</p>
+          <ul class="feature-list">
+            <li>Incidenskezelés és forenzika</li>
+            <li>Adatvédelmi bírságokra vonatkozó fedezeti lehetőségek</li>
+            <li>Hírnév- és kommunikációs költségek</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Részletek érdekelnek</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Szállítmány -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">📦</div>
+            <h3>Szállítmánybiztosítás</h3>
+          </div>
+          <p class="muted">Belföldi és nemzetközi fuvarok árukáraira.</p>
+          <ul class="feature-list">
+            <li>Egyszeri és éves keretszerződések</li>
+            <li>All risks / meghatározott kockázatok</li>
+            <li>Raktározási kiterjesztések</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Ajánlatkérés</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+
+        <!-- Csoportos élet/egészség -->
+        <article class="service-card">
+          <div class="service-head">
+            <div class="service-icon">👥</div>
+            <h3>Csoportos élet & egészség</h3>
+          </div>
+          <p class="muted">Munkáltatói juttatásként vonzó, adható megoldások.</p>
+          <ul class="feature-list">
+            <li>Rugalmas belépési feltételek</li>
+            <li>Egészségügyi szolgáltatói hálózat</li>
+            <li>Munkavállalói megtartás támogatása</li>
+          </ul>
+          <div class="card-cta">
+            <a class="btn btn--glass" href="./contact.html">Programot kérek</a>
+            <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Folyamat -->
+    <section class="container flow">
+      <h2 class="section-title">Hogyan dolgozom?</h2>
+      <ol class="flow-steps">
+        <li><span class="step-dot">1</span>Rövid egyeztetés – célok, jelenlegi szerződések, prioritások</li>
+        <li><span class="step-dot">2</span>Piaci összehasonlítás – érthető, táblázatos ajánlat</li>
+        <li><span class="step-dot">3</span>Ajánlás – kockázat, ár/érték és feltételek alapján</li>
+        <li><span class="step-dot">4</span>Szerződéskötés – kényelmesen, papírmunka átvállalása</li>
+        <li><span class="step-dot">5</span>Utánkövetés – évforduló, kárügyintézés támogatása</li>
+      </ol>
+      <div class="cta-banner card">
+        <p class="lead">Kérjen időpontot személyes vagy online egyeztetésre!</p>
+        <div class="cta-actions">
+          <a class="btn btn--primary" href="./contact.html">Időpontot kérek</a>
+          <a class="btn btn--glass" href="./index.html#kpi">Miért én?</a>
+        </div>
+      </div>
+      <p class="tiny muted note">
+        Jogi nyilatkozat: az oldalon szereplő leírások tájékoztató jellegűek; a konkrét feltételeket és fedezeteket
+        mindig a vonatkozó biztosítási feltételek és szerződések tartalmazzák.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <a href="./index.html" class="footer__brand">Bakos István Péter</a>
+      <p>© <span id="y"></span> Minden jog fenntartva</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav__toggle');
+    toggle?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

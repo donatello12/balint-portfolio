@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapcsolat – Bakos István Péter</title>
+
+  <!-- Globális CSS -->
+  <link rel="stylesheet" href="./css/00-reset.css">
+  <link rel="stylesheet" href="./css/01-tokens.css">
+  <link rel="stylesheet" href="./css/02-base.css">
+  <link rel="stylesheet" href="./css/03-layout.css">
+  <link rel="stylesheet" href="./css/04-components.css">
+  <!-- Oldalspecifikus CSS -->
+  <link rel="stylesheet" href="./css/pages/contact.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__brand" href="./index.html">Bakos István Péter</a>
+
+      <div id="primary-nav" class="nav__links">
+        <a class="nav__link" href="./index.html">Főoldal</a>
+        <a class="nav__link" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link active" href="./contact.html">Kapcsolat</a>
+      </div>
+
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="container contact-hero">
+      <h1>Kapcsolatfelvétel</h1>
+      <p class="lead">Írjon, és 24–48 órán belül visszajelzek. Kérhet személyes vagy online egyeztetést is.</p>
+    </section>
+
+    <!-- GRID: INFO + FORM -->
+    <section class="container form-grid">
+      <!-- INFO KÁRTYA -->
+      <aside class="contact-card card">
+        <h2>Elérhetőségek</h2>
+        <ul class="contact-list">
+          <li>📞 Telefon: <a href="tel:+3612345678">+36 1 234 5678</a></li>
+          <li>✉️ E-mail: <a href="mailto:istvan.peter@example.com">istvan.peter@example.com</a></li>
+          <li>🕘 Időpont: előzetes egyeztetéssel</li>
+          <li>🌍 Terület: országosan, online is</li>
+        </ul>
+
+        <div class="map-card">
+          <div class="map-placeholder">Térkép / találkozó egyeztetés alapján</div>
+        </div>
+
+        <div class="mini-cta">
+          <a class="btn btn--glass" href="./services.html">Szolgáltatások</a>
+          <a class="btn btn--primary" href="#kapcsolat-form">Időpontot kérek</a>
+        </div>
+      </aside>
+
+      <!-- FORM -->
+      <section class="form card" id="kapcsolat-form">
+        <h2>Írjon üzenetet</h2>
+
+        <form action="#" method="post" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Név</label>
+              <input class="input" id="name" name="name" type="text" placeholder="Teljes név" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input class="input" id="email" name="email" type="email" placeholder="nev@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Telefon (opcionális)</label>
+              <input class="input" id="phone" name="phone" type="tel" placeholder="+36 ...">
+            </div>
+            <div class="field">
+              <label for="topic">Téma</label>
+              <select class="select" id="topic" name="topic" required>
+                <option value="">Válasszon…</option>
+                <option>Élet / egészség</option>
+                <option>Lakás / vagyon</option>
+                <option>KGFB / CASCO</option>
+                <option>Nyugdíj / megtakarítás</option>
+                <option>Vállalati megoldás</option>
+                <option>Általános kérdés</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Üzenet</label>
+            <textarea class="textarea" id="message" name="message" rows="6" placeholder="Röviden írja le, miben segíthetek." maxlength="1200" required></textarea>
+            <div class="char-counter"><span id="cc">0</span>/1200</div>
+          </div>
+
+          <div class="field checkbox">
+            <label>
+              <input type="checkbox" required>
+              Hozzájárulok, hogy megkeressen a megadott elérhetőségeimen.
+            </label>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label>Ne töltse ki: <input type="text" name="website"></label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Üzenet elküldése</button>
+            <a class="btn btn--glass" href="tel:+3612345678">Visszahívást kérek</a>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container faq">
+      <h2>Gyakori kérdések</h2>
+      <details>
+        <summary>Hogyan zajlik az első egyeztetés?</summary>
+        <p>Telefonon vagy online 15–20 percben átbeszéljük a célokat, szerződéseket és kérdéseit. Ez díjmentes.</p>
+      </details>
+      <details>
+        <summary>Több biztosító ajánlatát is megnézzük?</summary>
+        <p>Igen, összehasonlító táblázatot készítek, és érthetően elmagyarázom a különbségeket.</p>
+      </details>
+      <details>
+        <summary>Segít kárbejelentésnél is?</summary>
+        <p>Igen, végigkísérem a folyamatot – dokumentumlista, határidők, státuszok egyeztetése.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <a href="./index.html" class="footer__brand">Bakos István Péter</a>
+      <p>© <span id="y"></span> Minden jog fenntartva</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.nav__toggle');
+    toggle?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // karakter számláló
+    const ta = document.getElementById('message');
+    const cc = document.getElementById('cc');
+    ta?.addEventListener('input', () => { cc.textContent = ta.value.length; });
+  </script>
+</body>
+</html>

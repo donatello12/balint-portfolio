@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rólam – Bakos István Péter</title>
+
+  <!-- Globális CSS -->
+  <link rel="stylesheet" href="./css/00-reset.css">
+  <link rel="stylesheet" href="./css/01-tokens.css">
+  <link rel="stylesheet" href="./css/02-base.css">
+  <link rel="stylesheet" href="./css/03-layout.css">
+  <link rel="stylesheet" href="./css/04-components.css">
+  <!-- Oldalspecifikus CSS -->
+  <link rel="stylesheet" href="css/pages/about.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__brand" href="./index.html">Bakos István Péter</a>
+
+      <div id="primary-nav" class="nav__links">
+        <a class="nav__link active" href="./index.html">Főoldal</a>
+        <a class="nav__link" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link" href="./contact.html">Kapcsolat</a>
+      </div>
+
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="container about-hero">
+      <div class="avatar" aria-hidden="true">B</div>
+      <div>
+        <p class="eyebrow">Allianz háttér • 40+ év tapasztalat</p>
+        <h1>Bakos István Péter</h1>
+        <p class="lead">
+          Biztosítási tanácsadóként abban hiszek, hogy a jó döntés <em>érthető</em> információból és
+          <em>személyes felelősségből</em> születik. 76 évesen is aktívan segítek ügyfeleimnek,
+          legyen szó családi biztonságról vagy vállalati kockázatkezelésről.
+        </p>
+        <div class="chips">
+          <span class="chip chip--line">Lakás & vagyon</span>
+          <span class="chip">KGFB & CASCO</span>
+          <span class="chip">Élet & egészség</span>
+          <span class="chip">Vállalati felelősség</span>
+          <span class="chip">Flotta</span>
+          <span class="chip">Nyugdíj & megtakarítás</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="container kpis" id="kpi">
+      <div class="kpi">
+        <div class="kpi__num">40+ év</div>
+        <div class="kpi__label">szakmai múlt</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">1000+</div>
+        <div class="kpi__label">szerződés & ügyfél</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">24–48 óra</div>
+        <div class="kpi__label">ajánlat-visszajelzés</div>
+      </div>
+    </section>
+
+    <!-- Idézet -->
+    <section class="container">
+      <blockquote class="quote">
+        „Az igazi biztosítás akkor jó, amikor nem kell róla beszélni – csak működik.”
+      </blockquote>
+    </section>
+
+    <!-- Timeline -->
+    <section class="container">
+      <h2>Pályám állomásai</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Kezdetek a biztosításban</h3>
+            <p>Értékesítőként indultam, gyorsan kiderült: a türelmes magyarázat a kulcs.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Allianz – lakossági és vállalati portfólió</h3>
+            <p>Lakás, gépjármű, élet és vállalati megoldások – széles körű gyakorlat.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Specializáció: felelősség & flotta</h3>
+            <p>Ügyvédi irodák, kivitelezők, KKV-flották – személyre szabott programok.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <h3>Tanácsadás fókusz</h3>
+            <p>Piaci összehasonlítás, feltételek tisztázása, kárügyintézés támogatása.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Munkamódszer / értékek -->
+    <section class="container">
+      <h2>Hogyan dolgozom?</h2>
+      <ul class="steps">
+        <li>Rövid helyzetfelmérés – célok, fedezeti igények, költségkeret</li>
+        <li>Ajánlatok gyűjtése és <strong>érthető összehasonlítása</strong></li>
+        <li>Ajánlás – ár/érték, kizárások és kockázat alapján</li>
+        <li>Szerződéskötés – papírmunka átvállalása</li>
+        <li>Utánkövetés – évforduló, módosítás, kárbejelentés</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="container cta-banner card">
+      <p class="lead">Beszéljünk a célokról – 15 perc elég az irány kijelöléséhez.</p>
+      <div class="cta-actions">
+        <a class="btn btn--primary" href="{{ url_for('contact') }}">Időpontot kérek</a>
+        <a class="btn btn--glass" href="{{ url_for('services') }}">Szolgáltatások</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">Bakos István Péter</a>
+      <p>© <span id="y"></span> Minden jog fenntartva</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav__toggle');
+    toggle?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

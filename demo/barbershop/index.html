@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OldTown Barbers – klasszikus borbélyszalon</title>
+  <meta name="description" content="Klasszikus és modern hajvágás, szakálligazítás. Foglalj időpontot online.">
+  <link rel="icon" href="./favicon.svg">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#">OldTown Barbers</a>
+      <button class="nav-toggle" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav">
+        <a href="#services" class="nav-link">Szolgáltatások</a>
+        <a href="#pricing" class="nav-link">Árak</a>
+        <a href="#contact" class="nav-link">Kapcsolat</a>
+        <a href="#booking" class="btn book-btn">Időpontfoglalás</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Klasszikus – Precíz – Barátságos</p>
+      <h1>OldTown Barbers</h1>
+      <p class="lead">Klasszikus borbélyélmény modern csavarral. Hajvágás, szakállformázás, forró törölköző.</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn btn-primary js-open-booking">Időpontfoglalás</a>
+        <a href="#services" class="btn btn-ghost">Szolgáltatások</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container section">
+    <h2>Szolgáltatások</h2>
+    <div class="grid-3">
+      <article class="card">
+        <img src="./images/tools.jpg" alt="Hajvágás" class="card-img">
+        <div class="card-body">
+          <h3>Hajvágás</h3>
+          <p>Klasszikus és modern fazonok, ollóval és géppel.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/barber-work.jpg" alt="Szakáll" class="card-img">
+        <div class="card-body">
+          <h3>Szakáll & borotválás</h3>
+          <p>Formázás, kontúrozás, forró törölközővel.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/shop-interior.jpg" alt="Csomagok" class="card-img">
+        <div class="card-body">
+          <h3>Csomagok</h3>
+          <p>Haj + szakáll kedvezményes összeállításokban.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="container section">
+    <h2>Árak</h2>
+    <div class="grid-3">
+      <article class="price-card">
+        <h3>Hajvágás</h3>
+        <div class="price">5 500 Ft</div>
+        <ul>
+          <li>Konzultáció</li>
+          <li>Vágás & styling</li>
+        </ul>
+      </article>
+      <article class="price-card">
+        <h3>Szakáll</h3>
+        <div class="price">4 000 Ft</div>
+        <ul>
+          <li>Formázás</li>
+          <li>Forró törölköző</li>
+        </ul>
+      </article>
+      <article class="price-card popular">
+        <h3>Haj + Szakáll</h3>
+        <div class="price">8 500 Ft</div>
+        <ul>
+          <li>Teljes csomag</li>
+          <li>Styling termék próba</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta container" id="booking">
+    <div class="cta-inner">
+      <h2>Készen állsz megújulni?</h2>
+      <p>Foglalj időpontot online, és találkozunk a szalonban.</p>
+      <a class="btn btn-primary js-open-booking">Időpontfoglalás</a>
+    </div>
+  </section>
+
+  <!-- CONTACT/FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner container">
+      <p>📍 1054 Budapest, Példa utca 12. • 📞 <a href="tel:+3612345678">+36 1 234 5678</a></p>
+      <p>© OldTown Barbers</p>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL (UI only) -->
+  <dialog class="booking-modal" id="bookingModal">
+    <form method="dialog" class="booking-card">
+      <h3>Időpontfoglalás</h3>
+      <div class="grid-2">
+        <label>Szolgáltatás
+          <select>
+            <option>Hajvágás</option>
+            <option>Szakáll</option>
+            <option>Haj + Szakáll</option>
+          </select>
+        </label>
+        <label>Dátum
+          <input type="date">
+        </label>
+        <label>Időpont
+          <input type="time">
+        </label>
+        <label>Név
+          <input type="text" placeholder="Teljes név">
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" value="cancel">Mégse</button>
+        <button class="btn btn-primary" value="submit">Foglalás (UI)</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

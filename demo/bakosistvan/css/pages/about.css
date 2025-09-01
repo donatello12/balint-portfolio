@@ -1,0 +1,246 @@
+/* =======================================================================
+   ABOUT PAGE (static/css/pages/about.css)
+   Bakos István Péter – Allianz portfólió
+   ======================================================================= */
+
+/* ---------- Hero blokk ------------------------------------------------ */
+/* === ABOUT hero – középre igazított, prémium megjelenés (desktop/mobil) === */
+.about-hero{
+  text-align: center;
+  grid-template-columns: 120px 1fr;
+}
+.about-hero .avatar{ justify-self: center; }
+
+/* Eyebrow: „chip” stílus */
+.about-hero .eyebrow{
+  display:inline-block;
+  padding:.28rem .7rem;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.82rem;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:#001015;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 8px 22px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.06) inset;
+  margin-bottom:.5rem;
+}
+
+/* Cím: reszponzív méret + finom gradiens vonal */
+.about-hero h1{
+  margin:.6rem auto .5rem;
+  font-size: clamp(1.9rem, 1.6rem + 2.2vw, 2.6rem);
+  line-height:1.12;
+  letter-spacing:-.2px;
+  color:var(--text);
+  max-width: 22ch;
+  position:relative;
+}
+.about-hero h1::after{
+  content:"";
+  display:block;
+  width:120px; height:3px;
+  margin:.6rem auto 0;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow:0 0 20px rgba(0,229,255,.35);
+}
+
+/* Lead: középre, jó sorhossz */
+.about-hero .lead{
+  max-width:65ch;
+  margin:.6rem auto 0;
+  font-size: clamp(1rem, .96rem + .4vw, 1.1rem);
+  line-height:1.7;
+  color:#EAFBFF;
+  opacity:.96;
+  text-wrap: pretty;
+  hyphens:auto;
+}
+
+
+/* Avatar kör */
+.avatar{
+  width: 110px; height: 110px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  font-size: 2rem; font-weight: 900; color: #001015;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,.06),
+    0 8px 30px rgba(0,0,0,.50),
+    0 0 40px rgba(0,94,184,.20);
+}
+
+/* Eyebrow (mini alcím) */
+.eyebrow{
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  margin-bottom: .25rem;
+}
+
+/* Chip-sor a szakterületekkel */
+.chips{
+  display: flex; flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .8rem;
+}
+.chip{
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  padding: .38rem .7rem;
+  border-radius: 999px;
+  font-size: .86rem;
+}
+.chip--line{ border-color: var(--secondary); }
+
+/* ---------- KPI rács -------------------------------------------------- */
+.kpi {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 1.2rem .9rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+.kpi__num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--secondary);   /* Allianz lila-kék akcentus */
+}
+
+.kpi__label {
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+/* ---------- Idézet ---------------------------------------------------- */
+.quote{
+  max-width: 950px;
+  margin: 1.2rem auto 1.6rem;
+  padding: .9rem 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #E6F2FF;
+  background: rgba(255,255,255,.06);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+}
+
+/* ---------- Timeline -------------------------------------------------- */
+/* Timeline – számozott design */
+.timeline {
+  display: grid;
+  row-gap: 1.4rem;
+  margin-top: 1.2rem;
+  counter-reset: step;
+}
+
+/* minden elem */
+.t-item {
+  display: grid;
+  grid-template-columns: 42px 1fr; /* szám | tartalom */
+  column-gap: 14px;
+  align-items: start;
+  counter-increment: step;
+}
+
+/* a „szám” kocka */
+.t-dot {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #001015;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3),
+              0 0 0 3px rgba(255,255,255,.08) inset;
+}
+
+/* maga a szám */
+.t-dot::before {
+  content: counter(step);
+}
+
+/* szöveg */
+.t-content h3 {
+  margin: 0 0 .25rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.t-content p {
+  margin: 0;
+  opacity: .92;
+  line-height: 1.55;
+}
+
+
+/* ---------- Munkamódszer listája ------------------------------------- */
+.container > h2{ margin: 1rem 0 .6rem; }
+.steps{ padding-left: 1.2rem; }
+.steps li{ margin: .42rem 0; }
+
+/* ---------- CTA banner ----------------------------------------------- */
+.cta-banner{
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+}
+.cta-actions{
+  display: flex;
+  gap: .7rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Responsív finomítások ----------------------------------- */
+@media (max-width: 680px){
+  .about-hero{ grid-template-columns: 80px 1fr; column-gap: 1rem; }
+  .quote{ margin: 1rem .4rem; }
+}
+/* Mobilon egy oszlop, minden középen */
+@media (max-width: 680px){
+  .about-hero{
+    grid-template-columns: 1fr;       /* avatar felül, szöveg alatta */
+    row-gap: .8rem;
+    padding: 2rem 0 1rem;
+  }
+  .about-hero h1::after{ width:96px; height:2px; }
+}
+
+/* === CTA banner – telefonon a gombok a szöveg ALATT, egymás alatt === */
+@media (max-width: 700px){
+  .cta-banner{
+    grid-template-columns: 1fr;    /* egy oszlop: szöveg, majd gombok */
+    text-align: center;
+  }
+  .cta-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.6rem;
+    justify-self: stretch;
+    width:100%;
+  }
+  .cta-actions .btn{
+    width:100%;
+    min-height:48px;
+    text-align:center;
+  }
+}
+
+/* Desktopon finom középre igazítás a CTA-ban is */
+@media (min-width: 701px){
+  .cta-banner{ text-align: center; }
+  .cta-actions{ justify-content: center; }
+}

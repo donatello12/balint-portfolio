@@ -1,0 +1,195 @@
+/* ===== Header / Nav ===== */
+.site-header{
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  background: color-mix(in oklab, var(--bg) 78%, black);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nav{
+  height: var(--header-h);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* brand – links – toggle */
+  align-items: center;
+  justify-items: center;
+  gap: .75rem;
+}
+.nav__brand{
+  justify-self: start;
+  font-weight: 900;
+  letter-spacing: .2px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.nav__links{
+  display: flex; gap: .5rem; align-items: center; justify-self: center;
+}
+.nav__link{
+  display: inline-block;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #EAF2FF; text-decoration: none; font-weight: 600;
+  transition: color .2s, border-color .2s, background-color .2s, box-shadow .2s, transform .15s;
+}
+.nav__link:hover,
+.nav__link:focus-visible{
+  color: var(--text);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(102,174,238,.18);
+}
+.nav__link.active{
+  color: #001015;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 8px 22px rgba(0,0,0,.28);
+}
+
+/* Hamburger */
+.nav__toggle{
+  display: none;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  align-items: center; justify-content: center; gap: 5px;
+  cursor: pointer; justify-self: end;
+}
+.nav__toggle span{
+  width: 18px; height: 2px; border-radius: 999px; background: #EAF2FF; display: block;
+}
+
+/* Mobil */
+@media (max-width: 820px){
+  .nav{
+    grid-template-columns: 1fr auto; /* brand – toggle */
+  }
+  .nav__toggle{ display: inline-flex; }
+  .nav__links{
+    position: fixed; left: 0; right: 0; top: var(--header-h);
+    display: grid; gap: .6rem; padding: .9rem 1rem 1.1rem;
+    background: color-mix(in oklab, var(--bg) 92%, black);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transform-origin: top; transform: scaleY(0);
+    opacity: 0; pointer-events: none;
+    transition: transform .2s, opacity .2s;
+  }
+  body.nav-open .nav__links{
+    transform: scaleY(1); opacity: 1; pointer-events: auto;
+  }
+}
+
+/* ===== Footer ===== */
+.site-footer{
+  flex: 0 0 auto;
+  height: var(--footer-h);
+  display: flex; align-items: center;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  color: var(--muted);
+}
+.footer__inner{
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .75rem;
+}
+.footer__brand{
+  font-weight: 700; letter-spacing: .2px; color: var(--secondary);
+  text-decoration: none;
+}
+/* Nav: aktív pill méret és belső kontraszt */
+.nav__link{ line-height: 1; }
+.nav__link.active{
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001015;
+  box-shadow: 0 10px 26px rgba(0,0,0,.32);
+}
+
+/* Footer: picit határozottabb elválasztás és tipó */
+.site-footer{ border-top-color: rgba(255,255,255,.10); }
+.footer__inner p{ margin: 0; opacity: .9; }
+/* ===== Mobile nav: full-screen overlay, nagy linkek ===== */
+/* ---------- Mobile nav overlay: stabil háttér + teljes magasság ---------- */
+@media (max-width: 820px){
+
+  /* Biztosan NE a régi scaleY verzió fusson */
+  .nav__links{
+    position: fixed !important;
+    top: var(--header-h); left: 0; right: 0; bottom: 0;
+    min-height: calc(100svh - var(--header-h));
+    z-index: 200;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+
+    /* 1) Kemény fallback háttér (mindenhol működik) */
+    background: rgba(11,15,25,.96);              /* fallback */
+    /* 2) Ha támogatott, szebb kevert háttér */
+    background: color-mix(in oklab, var(--bg) 95%, black);
+
+    /* üveg + blur */
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+
+    /* animáció: csúszás felülről */
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s ease, opacity .28s ease;
+  }
+
+  body.nav-open .nav__links{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ne scrollozzon a háttér */
+  body.nav-open{ overflow: hidden; }
+
+  /* Nagy, jól tappolható linkek */
+  .nav__links .nav__link{
+    width: min(640px, 92vw);
+    text-align: center;
+    font-size: 1.1rem;
+    padding: .9rem 1rem;
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 8px 22px rgba(0,0,0,.22) inset, 0 6px 16px rgba(0,0,0,.25);
+  }
+  .nav__links .nav__link:hover,
+  .nav__links .nav__link:focus-visible{
+    background: rgba(255,255,255,.12);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,229,255,.18);
+  }
+  .nav__links .nav__link.active{
+    color:#001015;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: transparent;
+    box-shadow: 0 10px 26px rgba(0,0,0,.32);
+  }
+
+  /* Hamburger X-re váltása (maradhat, csak itt a teljesség kedvéért) */
+  .nav__toggle{ display: inline-flex; position: relative; z-index: 201; }
+  .nav__toggle span{
+    width: 18px; height: 2px; background:#EAF2FF; border-radius:999px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  body.nav-open .nav__toggle span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  body.nav-open .nav__toggle span:nth-child(2){ opacity: 0; }
+  body.nav-open .nav__toggle span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+}

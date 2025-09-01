@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kezdőlap – Bakos István Péter</title>
+
+  <!-- Globális CSS -->
+  <link rel="stylesheet" href="./css/00-reset.css">
+  <link rel="stylesheet" href="./css/01-tokens.css">
+  <link rel="stylesheet" href="./css/02-base.css">
+  <link rel="stylesheet" href="./css/03-layout.css">
+  <link rel="stylesheet" href="./css/04-components.css">
+  <!-- Oldalspecifikus CSS -->
+  <link rel="stylesheet" href="./css/pages/home.css">
+</head>
+<body>
+  <!-- Navigáció -->
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__brand" href="./index.html">Bakos István Péter</a>
+
+      <div id="primary-nav" class="nav__links">
+        <a class="nav__link active" href="./index.html">Főoldal</a>
+        <a class="nav__link" href="./services.html">Szolgáltatások</a>
+        <a class="nav__link" href="./about.html">Rólam</a>
+        <a class="nav__link" href="./contact.html">Kapcsolat</a>
+      </div>
+
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Tartalom -->
+  <main class="container">
+    <section class="hero">
+      <p class="hero__eyebrow">Allianz – megbízhatóság</p>
+      <h1 class="hero__title">
+        Biztonság, tapasztalat, <span class="hero__title-accent">egy élet munkája</span>
+      </h1>
+      <p class="hero__lead">
+        Bakos István Péter vagyok, 76 éves biztosítási tanácsadó.
+        Évtizedek tapasztalatával segítek eligazodni a biztosítási lehetőségek között,
+        hogy Ön mindig a legjobb megoldást válassza.
+      </p>
+
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="./contact.html">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v2H5V4a2 2 0 0 1 2-2zm12 6H5v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zm-4 3h2v2h-2v-2zm-4 0h2v2h-2v-2zm-4 0h2v2H7v-2z"/>
+          </svg>
+          Időpontot kérek
+        </a>
+
+        <a class="btn btn--glass" href="./services.html">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 6h16v2H4V6zm2 5h12v2H6v-2zm3 5h6v2H9v-2z"/>
+          </svg>
+          Szolgáltatások
+        </a>
+      </div>
+    </section>
+
+    <!-- KPI blokk (kis számadatok) -->
+    <section class="kpis">
+      <div class="kpi">
+        <div class="kpi__num">40+ év</div>
+        <div class="kpi__label">szakmai tapasztalat</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">1000+</div>
+        <div class="kpi__label">elégedett ügyfél</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">Allianz</div>
+        <div class="kpi__label">biztonság & stabilitás</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Láb -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <a href="./index.html" class="footer__brand">Bakos István Péter</a>
+      <p>© <span id="y"></span> Minden jog fenntartva</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.nav__toggle');
+    toggle?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>

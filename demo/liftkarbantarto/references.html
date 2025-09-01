@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Referenciák - Liftkarbantartás Kft.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container text-center">
+      <h1 class="fw-bold">Referenciáink</h1>
+      <p class="lead mb-0">
+        Országszerte társasházak, irodaházak, ipari üzemek és egészségügyi intézmények lifteit tartjuk üzembiztosan.
+      </p>
+    </div>
+  </section>
+
+  <!-- SZŰRŐK -->
+  <section class="section container">
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <button class="filter-pill active" data-filter="all">Összes</button>
+      <button class="filter-pill" data-filter="irodahaz">Irodaház</button>
+      <button class="filter-pill" data-filter="tarsashaz">Társasház</button>
+      <button class="filter-pill" data-filter="egeszsegugy">Egészségügy</button>
+      <button class="filter-pill" data-filter="kereskedelmi">Kereskedelmi</button>
+      <button class="filter-pill" data-filter="ipari">Ipari</button>
+      <button class="filter-pill" data-filter="szalloda">Szálloda</button>
+    </div>
+
+    <!-- GALÉRIA -->
+    <div class="row g-4" id="refGrid">
+      <!-- Irodaház -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="irodahaz">
+        <div class="gallery-card">
+          <img src="images/lift1.jpg" class="reference-img" alt="Irodaház – Budapest">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Irodaház – Budapest</h5>
+            <p class="mb-0 small">Üvegfalú lift éves karbantartás • 12 szint</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift1.jpg"
+                  data-title="Irodaház – Budapest"
+                  data-desc="Modern üvegfalú lift karbantartása, 12 szintes irodaépületben.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+
+      <!-- Társasház -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="tarsashaz">
+        <div class="gallery-card">
+          <img src="images/lift2.jpg" class="reference-img" alt="Társasház – Debrecen">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Társasház – Debrecen</h5>
+            <p class="mb-0 small">Vezérlő modernizáció • 4 lift</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift2.jpg"
+                  data-title="Társasház – Debrecen"
+                  data-desc="Felújítás és korszerű vezérlőrendszer beépítése 4 liftnél.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+
+      <!-- Egészségügy -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="egeszsegugy">
+        <div class="gallery-card">
+          <img src="images/lift3.jpg" class="reference-img" alt="Kórház – Győr">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Kórház – Győr</h5>
+            <p class="mb-0 small">Betegszállító és teherliftek • 0–24 ügyelet</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift3.jpg"
+                  data-title="Kórház – Győr"
+                  data-desc="Teher- és betegszállító liftek rendszeres karbantartása, 0–24 ügyelet.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+
+      <!-- Kereskedelmi -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="kereskedelmi">
+        <div class="gallery-card">
+          <img src="images/lift4.jpg" class="reference-img" alt="Bevásárlóközpont – Szeged">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Bevásárlóközpont – Szeged</h5>
+            <p class="mb-0 small">Panorámaliftek • éves szerviz</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift4.jpg"
+                  data-title="Bevásárlóközpont – Szeged"
+                  data-desc="Panorámaliftek éves szervizelése, biztonsági vizsgálatok lebonyolítása.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+
+      <!-- Ipari -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="ipari">
+        <div class="gallery-card">
+          <img src="images/lift5.jpg" class="reference-img" alt="Ipari üzem – Tatabánya">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Ipari üzem – Tatabánya</h5>
+            <p class="mb-0 small">Nagy teherbírású emelők • karbantartás</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift5.jpg"
+                  data-title="Ipari üzem – Tatabánya"
+                  data-desc="Nagy teherbírású ipari emelőberendezések karbantartása.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+
+      <!-- Szálloda -->
+      <div class="col-md-4 col-sm-6 ref-item" data-cat="szalloda">
+        <div class="gallery-card">
+          <img src="images/lift6.jpg" class="reference-img" alt="Szálloda – Pécs">
+          <div class="gallery-overlay">
+            <h5 class="mb-1">Szálloda – Pécs</h5>
+            <p class="mb-0 small">Vendégforgalmi liftek • modernizáció</p>
+          </div>
+          <button class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                  data-img="images/lift6.jpg"
+                  data-title="Szálloda – Pécs"
+                  data-desc="Vendégforgalmat lebonyolító liftek modernizálása és belső burkolat csere.">
+            Megnyitás
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <h3 class="text-primary">Hasonló projektben gondolkodik?</h3>
+      <p>Kérjen ajánlatot, és javaslatot adunk a legjobb megoldásra.</p>
+      <a class="btn-custom" href="contact.html">Ajánlatot kérek</a>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light border-0">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="lbTitle">Referencia</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+        </div>
+        <div class="modal-body">
+          <img id="lbImg" src="" alt="" class="w-100 mb-3 rounded">
+          <p id="lbDesc" class="mb-0 text-secondary"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Szűrés
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const f = pill.dataset.filter;
+        document.querySelectorAll('#refGrid .ref-item').forEach(item => {
+          item.classList.toggle('d-none', !(f === 'all' || item.dataset.cat === f));
+        });
+      });
+    });
+
+    // Lightbox
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbDesc = document.getElementById('lbDesc');
+    document.querySelectorAll('.gallery-zoom').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lbImg.src = btn.dataset.img;
+        lbImg.alt = btn.dataset.title;
+        lbTitle.textContent = btn.dataset.title;
+        lbDesc.textContent = btn.dataset.desc;
+      });
+    });
+  </script>
+</body>
+</html>

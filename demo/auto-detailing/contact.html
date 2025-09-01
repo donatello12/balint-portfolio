@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autókozmetika - Kapcsolat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Saját CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Kapcsolat</h1>
+      <p class="lead">Kérdésed van vagy időpontot foglalnál? Írj nekünk, vagy hívj minket bizalommal!</p>
+      <a href="tel:+36301234567" class="btn-custom mt-2">Hívás: +36 30 123 4567</a>
+    </div>
+  </section>
+
+  <!-- KAPCSOLAT KÁRTYA + ŰRLAP -->
+  <section class="container py-5">
+    <div class="row justify-content-center g-4">
+      <!-- Cégadatok / gyors elérés -->
+      <div class="col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title mb-3">Elérhetőségek</h3>
+            <p class="mb-2"><strong>Cím:</strong><br>1111 Budapest, Példa utca 12.</p>
+            <p class="mb-2"><strong>Telefon (0–24):</strong><br>
+              <a class="btn-custom mt-1" href="tel:+36301234567">+36 30 123 4567</a>
+            </p>
+            <p class="mb-0"><strong>Email:</strong><br>
+              <a class="btn-custom mt-1" href="mailto:info@autokozmetika.hu">info@autokozmetika.hu</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Üzenetküldő űrlap -->
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title mb-3">Írj üzenetet</h3>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Név</label>
+                <input type="text" class="form-control" id="name" placeholder="Írd be a neved" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email cím</label>
+                <input type="email" class="form-control" id="email" placeholder="email@pelda.hu" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Üzenet</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Írd ide az üzeneted" required></textarea>
+              </div>
+              <button type="submit" class="btn-custom">Küldés</button>
+              <p class="text-secondary mt-2 mb-0" style="font-size:.9rem;">
+                *Az űrlap jelenleg demó. Ha szeretnéd, bekötöm emailre (pl. Formspree).
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- (opcionális) Térkép helyfoglaló blokk – ha lesz Google Maps embed -->
+    <!--
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body p-0">
+            <iframe
+              src="https://www.google.com/maps?q=Budapest%201111%20P%C3%A9lda%20utca%2012&output=embed"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // (opcionális) görgetésre sötétedő navbar
+    window.addEventListener("scroll", () => {
+      const n = document.querySelector(".custom-navbar");
+      if (!n) return;
+      window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+    });
+  </script>
+</body>
+</html>

@@ -1177,3 +1177,113 @@ main > :last-child{
 main > .card + .card{
   margin-top: calc(var(--section-gap) - var(--card-gap)) !important;
 }
+
+
+/* Élő példák kártyái */
+.project-thumb {
+  width: 100%;
+  max-height: 220px;       /* kicsit kisebb, szabályozott magasság */
+  object-fit: contain;     /* teljes kép látszik */
+  object-position: center; /* középre igazítva */
+  background: #0B0F19;     /* háttérszín a fekete kerethez (sötét UI-hoz) */
+  border-radius: 10px;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 4px;            /* kis belső margó, hogy legyen levegő a keretben */
+  box-sizing: border-box;
+}
+
+.live-samples {
+  display: flex;
+  justify-content: center;   /* középre teszi */
+}
+
+.live-samples .project {
+  max-width: 420px;          /* ne legyen túl széles */
+  width: 100%;
+}
+
+.live-samples .project h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+.live-samples .btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001015;
+  font-weight: 600;
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform .15s ease;
+}
+.live-samples .btn:hover {
+  transform: translateY(-2px);
+}
+/* ==== LIVE blokk kiemelés ==== */
+.live-wrap{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,38,.55);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,.45);
+}
+.live-wrap::before{
+  content:"";
+  position:absolute;
+  transform: translateY(-9999px); /* no stacking issues */
+}
+.live-wrap .live-samples{ margin-top: .75rem; }
+
+.live-wrap__head{
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.live-wrap__head h2{
+  margin: .35rem 0 .25rem;
+  color: var(--primary);
+}
+.live-wrap__head p{ margin: 0 auto; max-width: 65ch; }
+
+/* felső sárga-cian „chip” címke */
+.live-chip{
+  display:inline-block;
+  padding:.25rem .6rem;
+  font-weight:700; font-size:.8rem; letter-spacing:.06em;
+  border-radius:999px;
+  color:#001015;
+  background: linear-gradient(135deg, var(--primary), #66F0FF);
+  box-shadow: 0 6px 18px rgba(0,229,255,.20);
+}
+
+/* kártya sarkában LIVE jelvény */
+.live-tag{
+  position:absolute; top:10px; right:10px;
+  z-index:2;
+  padding:.18rem .5rem;
+  font-size:.7rem; font-weight:800;
+  border-radius:999px;
+  color:#001015;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 0 2px rgba(0,229,255,.25), 0 6px 16px rgba(0,0,0,.35);
+}
+
+/* kártya és kép finomhangolás */
+.live-samples{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.1rem;
+}
+.live-samples .project{ padding:.9rem; }
+.project-thumb{
+  width:100%;
+  max-height:170px;
+  object-fit: contain;
+  background:#0B0F19;
+  border-radius:10px;
+  display:block;
+  border:1px solid rgba(255,255,255,.12);
+  padding:4px; box-sizing:border-box;
+  margin-bottom:.75rem;
+}

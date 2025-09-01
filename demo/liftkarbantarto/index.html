@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Liftkarbantartás Kft.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Professzionális Liftkarbantartás</h1>
+      <p class="lead mb-3">Karbantartás • Javítás • Modernizáció • Hibabejelentés 0–24</p>
+      <a href="contact.html" class="btn-custom mt-1">Hibabejelentés most</a>
+    </div>
+  </section>
+
+  <!-- Rövid bemutatkozás -->
+  <section class="section container text-center">
+    <h2 class="mb-3 text-primary">Miért válasszon minket?</h2>
+    <p class="mb-0">
+      20+ év tapasztalat, országos lefedettség, éjjel-nappali ügyelet.
+      Célunk, hogy liftei mindig biztonságosan és üzembiztosan működjenek.
+    </p>
+  </section>
+
+  <!-- Szolgáltatások előnézet -->
+  <section class="section container">
+    <h2 class="text-center text-primary mb-4">Szolgáltatásaink</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 p-3 text-center">
+          <h3 class="card-title">Karbantartás</h3>
+          <p class="mb-0">Rendszeres ellenőrzés és szerviz, hogy elkerülje a leállásokat.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-3 text-center">
+          <h3 class="card-title">Javítás</h3>
+          <p class="mb-0">0–24 hibabejelentés, gyors kiszállás és szakszerű hibaelhárítás.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-3 text-center">
+          <h3 class="card-title">Modernizáció</h3>
+          <p class="mb-0">Régi liftek korszerűsítése a legújabb biztonsági előírások szerint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

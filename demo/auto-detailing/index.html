@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autókozmetika - Főoldal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Saját CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Prémium Autókozmetika</h1>
+      <p class="lead">Fekete &amp; arany elegancia – ahol az autód új életre kel.</p>
+      <a href="services.html" class="btn-custom mt-3">Szolgáltatásaink</a>
+    </div>
+  </section>
+
+  <!-- Referenciák -->
+  <section class="container py-5">
+    <h2 class="text-warning text-center mb-4">Referenciáink</h2>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="service-card p-0">
+          <img src="images/car1.jpg" class="reference-img" alt="Referencia 1 - külső mosás" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service-card p-0">
+          <img src="images/car2.jpg" class="reference-img" alt="Referencia 2 - részletek tisztítása" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service-card p-0">
+          <img src="images/car3.jpg" class="reference-img" alt="Referencia 3 - belső tisztítás" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service-card p-0">
+          <img src="images/car4.jpg" class="reference-img" alt="Referencia 4 - kerámia bevonat" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Szolgáltatások -->
+  <section class="services container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3 class="text-warning">Külső mosás</h3>
+          <p>Professzionális kézi autómosás kétvödrös technikával és minőségi szerekkel.</p>
+          <a href="services.html" class="btn-custom mt-2">Részletek</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3 class="text-warning">Belső takarítás</h3>
+          <p>Teljes belső tisztítás: porszívózás, kárpit- és bőrápolás, fertőtlenítés.</p>
+          <a href="services.html" class="btn-custom mt-2">Részletek</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3 class="text-warning">Kerámia bevonat</h3>
+          <p>1–3 év tartósság, erős hidrofób hatás és mély csillogás a fényezésnek.</p>
+          <a href="services.html" class="btn-custom mt-2">Részletek</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS (egyszer) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // görgetésre sötétedő navbar
+    window.addEventListener("scroll", () => {
+      const n = document.querySelector(".custom-navbar");
+      if (!n) return;
+      window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+    });
+  </script>
+</body>
+</html>

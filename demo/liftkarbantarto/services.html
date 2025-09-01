@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Szolgáltatások - Liftkarbantartás Kft.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container text-center">
+      <h1 class="fw-bold">Szolgáltatásaink</h1>
+      <p class="lead mb-0">
+        Komplett megoldások a karbantartástól a modernizációig – üzembiztonság, gyors reakció, átlátható SLA.
+      </p>
+    </div>
+  </section>
+
+  <!-- FŐ SZOLGÁLTATÁSOK (részletes) -->
+  <section class="section container">
+    <div class="row g-4">
+      <!-- Karbantartás -->
+      <div class="col-md-6">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle">🔧</div>
+            <div>
+              <h3 class="card-title mb-2">Rendszeres karbantartás</h3>
+              <ul class="feature-list mb-3">
+                <li>Ütemezett ellenőrzések, naplózott jegyzőkönyvek</li>
+                <li>Biztonsági és működési pontok szisztematikus átnézése</li>
+                <li>Elkopó alkatrészek időben történő cseréje</li>
+              </ul>
+              <a href="contact.html" class="btn-custom">Ajánlatot kérek</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hibaelhárítás -->
+      <div class="col-md-6">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle">⚡</div>
+            <div>
+              <h3 class="card-title mb-2">Gyors hibaelhárítás (0–24)</h3>
+              <ul class="feature-list mb-3">
+                <li>Non-stop hibabejelentés, diszpécserszolgálat</li>
+                <li>Rövid kiszállási idő, szakképzett technikusok</li>
+                <li>Cserealkatrész logisztika, ideiglenes üzemképesség</li>
+              </ul>
+              <a href="contact.html" class="btn-custom">Hibabejelentés most</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modernizáció -->
+      <div class="col-md-6">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle">🚀</div>
+            <div>
+              <h3 class="card-title mb-2">Lift modernizáció</h3>
+              <ul class="feature-list mb-3">
+                <li>Vezérléscsere, energiahatékony meghajtás</li>
+                <li>Ajtórendszer, érzékelők és vezérlőpanelek cseréje</li>
+                <li>Esztétikai felújítás (kabinfalak, világítás, kezelők)</li>
+              </ul>
+              <a href="contact.html" class="btn-custom">Modernizációs konzultáció</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Új telepítés -->
+      <div class="col-md-6">
+        <div class="card h-100 p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle">🏗</div>
+            <div>
+              <h3 class="card-title mb-2">Új lift telepítés</h3>
+              <ul class="feature-list mb-3">
+                <li>Teljes körű tervezés és engedélyeztetés</li>
+                <li>Gyártói kiválasztás, projektmenedzsment</li>
+                <li>Üzembe helyezés és átadás dokumentációval</li>
+              </ul>
+              <a href="contact.html" class="btn-custom">Ajánlat új projektre</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SLA / CSOMAGOK -->
+  <section class="section container">
+    <h2 class="text-center text-primary mb-4">Karbantartási csomagok (SLA)</h2>
+    <div class="row g-4">
+      <!-- Alap -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4">
+          <h4 class="card-title">ALAP</h4>
+          <ul class="feature-list mb-3">
+            <li>Éves ütemterv szerinti helyszíni ellenőrzés</li>
+            <li>Alap kenés, beállítások</li>
+            <li>24–48 órás reakcióidő munkanapokon</li>
+          </ul>
+          <div class="small text-secondary mb-3">Ár: egyedi ajánlat alapján</div>
+          <a href="contact.html" class="btn-custom">Ajánlatot kérek</a>
+        </div>
+      </div>
+      <!-- Standard (kiemelt) -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4 plan-popular">
+          <div class="badge bg-warning text-dark mb-2 fw-semibold">Legnépszerűbb</div>
+          <h4 class="card-title">STANDARD</h4>
+          <ul class="feature-list mb-3">
+            <li>Havi / negyedéves karbantartási ciklus</li>
+            <li>Teljes biztonsági ellenőrzési lista</li>
+            <li>0–24 hibabejelentés, gyorsított kiszállás</li>
+          </ul>
+          <div class="small text-secondary mb-3">Ár: egyedi ajánlat alapján</div>
+          <a href="contact.html" class="btn-custom">Ezt kérem</a>
+        </div>
+      </div>
+      <!-- Prémium -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4">
+          <h4 class="card-title">PRÉMIUM</h4>
+          <ul class="feature-list mb-3">
+            <li>Proaktív alkatrészcsere-ütemezés</li>
+            <li>Távfelügyelet / riasztás (ha támogatott)</li>
+            <li>Prioritásos kiszállás, SLA szerinti időgarancia</li>
+          </ul>
+          <div class="small text-secondary mb-3">Ár: egyedi ajánlat alapján</div>
+          <a href="contact.html" class="btn-custom">Ajánlat prémiumra</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLYAMAT (lépések) -->
+  <section class="section container">
+    <h2 class="text-center text-primary mb-4">Hogyan dolgozunk?</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card h-100 p-3 text-center">
+          <div class="step-num mx-auto">1</div>
+          <h6 class="mt-2 mb-1">Helyszíni felmérés</h6>
+          <p class="mb-0 text-secondary">Állapotvizsgálat, igények egyeztetése</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100 p-3 text-center">
+          <div class="step-num mx-auto">2</div>
+          <h6 class="mt-2 mb-1">Ajánlat & ütemezés</h6>
+          <p class="mb-0 text-secondary">Átlátható tételek, fix határidők</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100 p-3 text-center">
+          <div class="step-num mx-auto">3</div>
+          <h6 class="mt-2 mb-1">Kivitelezés</h6>
+          <p class="mb-0 text-secondary">Minőségi alkatrészek, dokumentáció</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100 p-3 text-center">
+          <div class="step-num mx-auto">4</div>
+          <h6 class="mt-2 mb-1">Átadás & SLA</h6>
+          <p class="mb-0 text-secondary">Üzembe helyezés, garancia, karbantartás</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA sáv -->
+  <section class="container text-center py-5">
+    <h3 class="text-primary">Készen áll a megbízható üzemelésre?</h3>
+    <p>Írjon nekünk, és 1 munkanapon belül visszajelzünk.</p>
+    <a href="/kapcsolat" class="btn-custom">Ajánlatot kérek</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

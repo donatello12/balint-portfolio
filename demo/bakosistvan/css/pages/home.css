@@ -1,0 +1,98 @@
+/* =======================
+   HOME (index.html)
+   ======================= */
+
+/* Hero szekció extra kiemelés */
+.hero {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .75rem;
+  display: block;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 auto .75rem;
+  max-width: 20ch;
+}
+
+.hero__title-accent {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0,94,184,.25);
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  opacity: .92;
+  margin: 0 auto 1.4rem;
+  max-width: 60ch;
+}
+
+.hero__ctas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .9rem;
+  margin-top: 1.5rem;
+}
+
+/* KPI szekció */
+.kpis {
+  margin-top: 3rem;
+}
+
+.kpi {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.kpi:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35),
+              0 0 0 2px rgba(0,94,184,.25);
+}
+
+.kpi__num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: .3rem;
+}
+
+.kpi__label {
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+/* Mobil finomítás */
+@media (max-width: 700px) {
+  .hero {
+    text-align: left;
+    padding: 3rem 1rem;
+  }
+  .hero__title {
+    max-width: 100%;
+  }
+  .hero__lead {
+    font-size: 1rem;
+  }
+  .hero__ctas {
+    justify-content: flex-start;
+  }
+}
