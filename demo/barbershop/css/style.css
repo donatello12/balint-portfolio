@@ -98,3 +98,66 @@ a{ color:var(--accent); text-decoration:none }
   background: rgba(255,255,255,.08); color:#fff; padding:.7rem .8rem
 }
 .modal-actions{ display:flex; gap:.6rem; justify-content:flex-end; margin-top:1rem }
+/* --- Mobile hamburger: látható háttér + erősebb pillák --- */
+@media (max-width: 820px){
+  /* a teljes overlay kapjon sötét, nem átlátszó hátteret és magas z-indexet */
+  .nav-links{
+    position: fixed;
+    top: 64px; left: 0; right: 0; bottom: 0;
+    z-index: 200;
+    padding: 2rem 1rem;
+    display: flex; flex-direction: column; gap: .9rem;
+
+    background: #0A0C12;                 /* <<< fix sötét háttér */
+    /* ha szeretnél pici üveg-hatást: */
+    /* background: rgba(10,12,18,.98); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); */
+
+    transform: translateY(-100%);
+    opacity: 0; pointer-events: none;
+    transition: transform .28s ease, opacity .28s ease;
+  }
+  .nav-open .nav-links{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-open{ overflow: hidden; }         /* ne scrollozzon a háttér */
+
+  /* nagy, kontrasztos gombok – NEM átlátszó alap */
+  .nav-link,
+  .book-btn{
+    width: min(640px, 92vw);
+    text-align: center;
+    font-size: 1.1rem;
+    padding: .9rem 1rem;
+    border-radius: 14px;
+    background: #141823;                 /* <<< opa­que sötét */
+    border: 1px solid rgba(255,255,255,.14);
+    color: #F5F7FB;
+    box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 0 0 0 transparent;
+  }
+  .nav-link:hover{ border-color: var(--primary); }
+
+  /* kiemelt „Időpontfoglalás” marad arany, de kap egy finom külső árnyékot */
+  .book-btn{
+    background: linear-gradient(135deg, var(--primary), #ffdca1);
+    color: #1a1205;
+    border-color: transparent;
+    box-shadow: 0 12px 26px rgba(232,183,107,.28);
+  }
+
+  /* hamburger gomb is legyen sötét, nem áttetsző */
+  .nav-toggle{
+    display: inline-flex;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.22);
+    background: #0A0C12;                 /* <<< fix háttér */
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    align-items: center; justify-content: center; gap: 6px;
+  }
+  .nav-toggle span{
+    width: 20px; height: 2.5px; border-radius: 999px; background: #fff;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  /* X animáció nyitáskor (ha a body kap nav-open-t a JS-ből) */
+  .nav-open .nav-toggle span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .nav-open .nav-toggle span:nth-child(2){ opacity: 0; }
+  .nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+}
