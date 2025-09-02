@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kezdőlap – Bakos István Péter</title>
+  <title>Kezdőlap – Példa Biztosító</title>
 
   <!-- Globális CSS -->
   <link rel="stylesheet" href="./css/00-reset.css">
@@ -17,8 +17,8 @@
 <body>
   <!-- Navigáció -->
   <header class="site-header">
-    <nav class="nav" role="navigation" aria-label="Fő navigáció">
-      <a class="nav__brand" href="./index.html">Bakos István Péter</a>
+    <nav class="nav container" role="navigation" aria-label="Fő navigáció">
+      <a class="nav__brand" href="./index.html">Példa Biztosító</a>
 
       <div id="primary-nav" class="nav__links">
         <a class="nav__link active" href="./index.html">Főoldal</a>
@@ -41,7 +41,7 @@
         Biztonság, tapasztalat, <span class="hero__title-accent">egy élet munkája</span>
       </h1>
       <p class="hero__lead">
-        Bakos István Péter vagyok, 76 éves biztosítási tanácsadó.
+        Példa Biztosító vagyok, 76 éves biztosítási tanácsadó.
         Évtizedek tapasztalatával segítek eligazodni a biztosítási lehetőségek között,
         hogy Ön mindig a legjobb megoldást válassza.
       </p>
@@ -83,19 +83,59 @@
   <!-- Láb -->
   <footer class="site-footer">
     <div class="footer__inner">
-      <a href="./index.html" class="footer__brand">Bakos István Péter</a>
+      <a href="./index.html" class="footer__brand">Példa Biztosító</a>
       <p>© <span id="y"></span> Minden jog fenntartva</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.nav__toggle');
+  const nav    = document.getElementById('primary-nav');
 
-    const toggle = document.querySelector('.nav__toggle');
-    toggle?.addEventListener('click', () => {
-      const open = document.body.classList.toggle('nav-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  </script>
+  // Header magasság -> CSS változó (fallback 64px)
+  const setHeaderVar = () => {
+    const h = header?.offsetHeight || 64;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  };
+  setHeaderVar();
+  window.addEventListener('resize', setHeaderVar);
+
+  let scrollY = 0;
+
+  const openNav = () => {
+    scrollY = window.scrollY || 0;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.classList.add('nav-open');
+    toggle?.setAttribute('aria-expanded', 'true');
+    // fókusz, de ne görgessen
+    nav?.querySelector('a')?.focus?.({ preventScroll: true });
+  };
+
+  const closeNav = () => {
+    document.body.classList.remove('nav-open');
+    document.body.style.top = '';
+    toggle?.setAttribute('aria-expanded', 'false');
+    window.scrollTo({ top: scrollY, left: 0, behavior: 'auto' });
+    toggle?.focus?.({ preventScroll: true });
+  };
+
+  toggle?.addEventListener('click', () => {
+    document.body.classList.contains('nav-open') ? closeNav() : openNav();
+  });
+
+  // ESC zárás
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
+  });
+
+  // Linkre katt -> zárás
+  nav?.addEventListener('click', e => {
+    if (e.target.closest('a')) closeNav();
+  });
+})();
+</script>
+
 </body>
 </html>

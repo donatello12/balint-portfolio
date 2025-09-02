@@ -193,3 +193,34 @@
   body.nav-open .nav__toggle span:nth-child(2){ opacity: 0; }
   body.nav-open .nav__toggle span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 }
+
+
+/* Hamburger ikon mindig ugyanaz – ne alakuljon X-re */
+@media (max-width: 820px) {
+  /* ne animáljon */
+  .nav__toggle span { transition: none !important; }
+
+  /* nyitott állapotban is maradjon a 3 csík */
+  body.nav-open .nav__toggle span,
+  body.nav-open .nav__toggle span:nth-child(1),
+  body.nav-open .nav__toggle span:nth-child(3) {
+    transform: none !important;
+  }
+  body.nav-open .nav__toggle span:nth-child(2) {
+    opacity: 1 !important;
+  }
+
+  /* (opcionális) a gomb háttere se változzon nyitáskor */
+  body.nav-open .nav__toggle {
+    background: rgba(255,255,255,.06) !important;
+    border-color: rgba(255,255,255,.12) !important;
+    box-shadow: none !important;
+  }
+}
+/* EDDIGI: body.nav-open { overflow:hidden; }  <-- ezt hagyd meg nyugodtan,
+   de a lényeg a position: fixed + top */
+body.nav-open{
+  position: fixed;
+  width: 100%;
+  overflow: hidden; /* maradhat */
+}

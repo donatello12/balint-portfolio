@@ -288,3 +288,24 @@ body{
 .grid > .card {
   height: 100%;
 }
+/* Referenciák környéki vonalak kikapcsolása – HTML módosítás nélkül */
+
+/* Hamburger (összecsukott) menüben NE legyen hover aláhúzás */
+.custom-navbar .navbar-collapse.show .nav-link::after,
+.custom-navbar .navbar-collapse.show .nav-link:hover::after{
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+/* Biztonsági: kis kijelzőn általában is kapcsold ki */
+@media (max-width: 991.98px) {
+  .custom-navbar .navbar-collapse .nav-link::after,
+  .custom-navbar .navbar-collapse .nav-link:hover::after{
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+}
