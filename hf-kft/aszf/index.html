@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="icon" type="image/png" href="/hf-kft/images/logo.png">
   <meta name="robots" content="index,follow">
   <meta http-equiv="content-language" content="hu">
 
@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://www.felvonoszerviz.hu/aszf/">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/hf-kft/style.css">
   <style>
     .hero.hero-small{
       --hero-h: 280px; min-height:var(--hero-h);
@@ -28,7 +28,7 @@
 <body>
   <div id="navbar-container"></div>
   <script>
-    fetch("../navbar/index.html").then(r=>r.text()).then(h=>{document.getElementById("navbar-container").innerHTML=h;});
+    fetch("/hf-kft/navbar/index.html").then(r=>r.text()).then(h=>{document.getElementById("navbar-container").innerHTML=h;});
   </script>
 
   <section class="hero hero-small">
@@ -80,7 +80,7 @@
     <p>A tervdokumentációk, eljárások, szoftverbeállítások és műszaki megoldások szerzői jogi védelem alatt állnak; a Megrendelő azokat kizárólag rendeltetésszerű üzemeltetéshez használhatja.</p>
 
     <h3>10. Adatkezelés</h3>
-    <p>Az adatkezelés szabályait külön dokumentum tartalmazza: <a href="../adatkezeles/"">Adatkezelési tájékoztató</a>.</p>
+    <p>Az adatkezelés szabályait külön dokumentum tartalmazza: <a href="/hf-kft/adatkezeles/"">Adatkezelési tájékoztató</a>.</p>
 
     <h3>11. Panaszkezelés, jogvita</h3>
     <p>Panaszát az <a href="mailto:info@felvonoszerviz.hu">info@felvonoszerviz.hu</a> címen vagy a +36 1 234 5678 telefonszámon fogadjuk. Jogvita esetén a felek törekednek a békés rendezésre; ennek eredménytelensége esetén a hatáskörrel és illetékességgel rendelkező magyar bíróság jár el.</p>
@@ -96,12 +96,13 @@
     <div><strong>H és F Hibaelhárító és Felvonószerelő Kft.</strong> • Adószám: 10865295-2-43</div>
     <div>Székhely: 1196 Budapest, Hunyadi u. 152. • Email: <a href="mailto:info@felvonoszerviz.hu">info@felvonoszerviz.hu</a> • Tel: <a href="tel:+3612345678">+36 1 234 5678</a></div>
     <div class="mt-2">
-      <a href="../aszf/"" class="link-light">ÁSZF</a> ·
-      <a href="../adatkezeles/"" class="link-light">Adatkezelési tájékoztató</a> ·
-      <a href="../cookie-tajekoztato/"" class="link-light">Cookie tájékoztató</a>
+      <a href="/hf-kft/aszf/" class="link-light">ÁSZF</a> ·
+      <a href="/hf-kft/adatkezeles/" class="link-light">Adatkezelési tájékoztató</a> ·
+      <a href="/hf-kft/cookie-tajekoztato/" class="link-light">Cookie tájékoztató</a>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
