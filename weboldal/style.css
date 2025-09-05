@@ -1,0 +1,311 @@
+/* =============================
+   Liftkarbantartás – BLACK + ORANGE THEME
+   ============================= */
+:root{
+  --bg:#111;           /* fő háttér (fekete) */
+  --bg-2:#151515;      /* sötét panel */
+  --panel:#1a1a1a;
+  --text:#f1f1f1;      /* fő szöveg */
+  --muted:#bdbdbd;     /* halvány szöveg */
+  --accent:#FF7A00;    /* narancs */
+  --accent-dark:#e66e00;
+  --accent-25: rgba(255,122,0,.25);
+  --accent-15: rgba(255,122,0,.15);
+  --black:#000;
+}
+
+/* ===== Alap ===== */
+body{
+  background-color:var(--bg);
+  color:var(--text);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar{ background-color:var(--black); }
+
+.navbar .navbar-brand{
+  color:var(--accent) !important;
+  font-weight:700;
+}
+
+/* modern, tiszta linkek */
+.custom-navbar{ background-color:var(--black); padding:15px 0; }
+.custom-navbar .navbar-brand{ font-size:1.4rem; letter-spacing:1px; }
+.custom-navbar .nav-link{
+  color:var(--text) !important;
+  margin:0 10px;
+  position:relative;
+  transition:color .3s;
+}
+.custom-navbar .nav-link:hover{ color:var(--accent) !important; }
+.custom-navbar .nav-link::after{
+  content:""; position:absolute; left:0; bottom:-5px; height:2px; width:0%;
+  background:var(--accent); transition:width .3s;
+}
+.custom-navbar .nav-link:hover::after{ width:100%; }
+
+/* CTA a navban (ha van btn-cta a navbar.html-ben) */
+.navbar .btn-cta{
+  background:var(--accent) !important; color:#000 !important;
+  font-weight:800; padding:8px 20px; border-radius:50px;
+  text-decoration:none; display:inline-block; border:none;
+  transition:all .25s ease;
+}
+.navbar .btn-cta:hover{ background:var(--accent-dark) !important; transform:scale(1.05); }
+
+/* Hamburger: átlátszó háttér + fehér ikon */
+.navbar-toggler{ background:transparent !important; border:none; outline:none; box-shadow:none; }
+.navbar-toggler:focus{ outline:none; box-shadow:none; }
+.navbar-dark .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* ===== Hero (nagy képes fejléc) ===== */
+.hero{
+  background:
+    linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+    url("../images/hatter.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:120px 20px;
+  text-align:center;
+}
+.hero h1, .hero p{ text-shadow:2px 2px 6px rgba(0,0,0,.8); }
+
+/* ===== Hero-small (más oldalakhoz) ===== */
+.hero-small{
+  background:
+    linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+    url("../images/lift2.jpg") center/cover no-repeat;
+  padding:80px 20px; color:#fff;
+}
+
+/* ===== Gombok ===== */
+.btn-custom{
+  background:var(--accent) !important; color:#000 !important;
+  font-weight:800; border-radius:999px; padding:12px 28px;
+  transition:transform .25s ease, background-color .25s ease;
+  text-decoration:none; display:inline-block; border:none !important;
+  position:relative; overflow:hidden;
+}
+.btn-custom:hover{ background:var(--accent-dark) !important; transform:scale(1.05); }
+/* finom fénycsík animáció */
+.btn-custom::before{
+  content:""; position:absolute; top:0; left:-75px; width:50px; height:100%;
+  background:rgba(255,255,255,.45); transform:skewX(-20deg); transition:.5s;
+}
+.btn-custom:hover::before{ left:120%; }
+
+/* ===== Szekciók ===== */
+.section{ padding:60px 20px; }
+
+/* ===== Kártyák ===== */
+.card{
+  border:1px solid var(--accent-25);
+  border-radius:14px;
+  background:var(--panel);
+  box-shadow:0 4px 16px rgba(0,0,0,.25);
+  transition:.3s;
+  color:var(--text);
+}
+.card:hover{ transform:translateY(-5px); box-shadow:0 6px 28px rgba(255,122,0,.15); }
+.card .card-title{ color:var(--accent); font-weight:800; }
+
+/* ===== Referencia képek ===== */
+.reference-img{
+  width:100%; height:200px; object-fit:cover; border-radius:8px;
+}
+
+/* --- Referenciák: galéria kártya --- */
+.gallery-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-2);
+  border:1px solid var(--accent-25);
+}
+.gallery-card .reference-img {
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+.gallery-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.75) 60%, rgba(0,0,0,.92) 100%);
+  color: #fff;
+  transition: transform .25s ease, opacity .25s ease;
+  transform: translateY(0);
+}
+.gallery-card:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
+
+.gallery-zoom {
+  position: absolute;
+  inset: 10px 10px auto auto;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 999px;
+  font-size: .85rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.gallery-zoom:hover { transform: scale(1.05); background:var(--accent-dark); }
+
+/* Szűrő pill-ek (sötét alap, aktív narancs) */
+.filter-pill {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--accent-25);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.filter-pill:hover { background:#1f1f1f; }
+.filter-pill.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* Kerek ikon-buborék a fő szolgáltatásoknál */
+.icon-circle{
+  width:56px;height:56px;flex:0 0 56px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background: var(--bg);
+  border:2px solid var(--accent);
+  color:var(--accent); font-size:1.4rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+}
+
+/* Pipa listák egységesen (narancs akcentus) */
+.feature-list{ padding-left:0; margin:0; list-style:none; }
+.feature-list li{
+  position:relative; padding-left:26px; margin-bottom:6px; color:#ddd;
+}
+.feature-list li::before{
+  content:"✓";
+  position:absolute; left:0; top:0; color:var(--accent); font-weight:900;
+}
+
+/* SLA: kiemelt (Standard) kártya */
+.plan-popular{
+  box-shadow:0 12px 36px rgba(255,122,0,.18);
+  transform:translateY(-4px);
+  border:1px solid var(--accent) !important;
+}
+
+/* Folyamat lépésszám */
+.step-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--accent);color:#000;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Fejlécek egységes akcentus színnel */
+.text-primary{ color:var(--accent) !important; }
+
+/* Kapcsolat űrlap – sötét mezők, narancs fókusz */
+.form-control, .form-select, textarea.form-control{
+  background:#0f0f0f; color:#f1f1f1;
+  border:1px solid var(--accent-25);
+  border-radius:10px;
+}
+.form-control::placeholder{ color:#9a9a9a; }
+.form-control:focus, .form-select:focus, textarea.form-control:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 .2rem var(--accent-15);
+}
+
+/* kis kiegészítés a link-gombok közötti távolságra */
+.card .btn-custom{ margin-top:.25rem; }
+/* ===== Kártyák egységes magassággal + gombok egyforma méretben ===== */
+
+/* 1) A kártya tartalma rugalmas oszlop, a gombsor az aljára kerül */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1 1 auto;                /* kitölti a magasságot */
+}
+
+/* 2) Gombsor rács: két gomb egymás mellett, alulra tolva */
+.card .card-cta,
+.card .btn-row {
+  margin-top: auto;              /* a kártya aljára tolja */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+}
+@media (max-width: 700px){
+  .card .card-cta,
+  .card .btn-row {
+    grid-template-columns: 1fr;  /* mobilon egymás alatt */
+  }
+}
+
+/* 3) Minden gomb azonos magasságú és középre igazított szöveggel */
+.btn-custom,
+.card .btn,
+.card .btn-outline,
+.card .btn-dark {
+  display: inline-flex;           /* rugalmas központosítás */
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;              /* nyúljon a rács cellájára */
+  min-block-size: 48px;           /* egységes magasság (kb. 3rem) */
+  line-height: 1.2;               /* több sor esetén szebb */
+  white-space: normal;            /* törhet a hosszú felirat */
+  word-break: break-word;
+  text-align: center;
+  padding: .75rem 1rem;           /* konzisztens belső margó */
+}
+
+/* ha van másodlagos gomb-típusod is, ugyanígy méretezzük */
+.btn-outline-custom{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  min-block-size: 48px;
+  line-height: 1.2;
+  white-space: normal;
+  text-align: center;
+  padding: .75rem 1rem;
+}
+
+/* 4) Opcionális: a kártyarács oszlopai egymás magasságát vegyék fel */
+.row > [class*="col"] > .card,
+.grid > .card {
+  height: 100%;
+}
+/* Referenciák környéki vonalak kikapcsolása – HTML módosítás nélkül */
+
+/* Hamburger (összecsukott) menüben NE legyen hover aláhúzás */
+.custom-navbar .navbar-collapse.show .nav-link::after,
+.custom-navbar .navbar-collapse.show .nav-link:hover::after{
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+/* Biztonsági: kis kijelzőn általában is kapcsold ki */
+@media (max-width: 991.98px) {
+  .custom-navbar .navbar-collapse .nav-link::after,
+  .custom-navbar .navbar-collapse .nav-link:hover::after{
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+}

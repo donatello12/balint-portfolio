@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="content-language" content="hu">
+
+  <!-- SEO alap -->
+  <title>Kapcsolat – hibabejelentés 0–24 | H és F Kft.</title>
+  <meta name="description" content="Lépjen kapcsolatba velünk! Székhely: 1196 Budapest, Hunyadi u. 152. Email: info@felvonoszerviz.hu. Hibabejelentés 0–24, ajánlatkérés, időpont-egyeztetés.">
+
+  <!-- Kanonikus URL -->
+  <link rel="canonical" href="https://www.felvonoszerviz.hu/contact/">
+
+  <!-- Teljesítmény (ha ezt a képet használod herohoz) -->
+  <link rel="preload" as="image" href="/images/hatter4.jpg" fetchpriority="high">
+
+  <!-- Struktúrált adatok: morzsamenü + ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Főoldal","item":"https://www.felvonoszerviz.hu/"},
+      {"@type":"ListItem","position":2,"name":"Kapcsolat","item":"https://www.felvonoszerviz.hu/contact/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Kapcsolat – H és F Kft.",
+    "url":"https://www.felvonoszerviz.hu/contact/",
+    "mainEntity":{
+      "@type":"LocalBusiness",
+      "name":"H és F KFT",
+      "legalName":"H és F Hibaelhárító és Felvonószerelő Korlátolt Felelősségű Társaság",
+      "email":"info@felvonoszerviz.hu",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Hunyadi u. 152.",
+        "addressLocality":"Budapest",
+        "postalCode":"1196",
+        "addressCountry":"HU"
+      },
+      "contactPoint":[{
+        "@type":"ContactPoint",
+        "contactType":"Hibabejelentés / ügyfélszolgálat",
+        "email":"info@felvonoszerviz.hu",
+        "telephone":"+36 1 234 5678",
+        "availableLanguage":["hu"]
+      }]
+    }
+  }
+  </script>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<style>
+.hero.hero-small{
+  /* magasság – állítható */
+  --hero-h: 360px;             /* növeld pl. 420/480-ra ha még több képet akarsz látni */
+  min-height: var(--hero-h);
+  display: flex;
+  align-items: center;         /* szöveg függőlegesen középre */
+
+  /* háttér */
+  background-image:
+    linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+    url('../images/hatter4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;      /* kitölti a szélességet, esztétikusan vág */
+  background-position: 50% 70%;/* fókuszpont (x% y%) – állítsd ízlés szerint: 50% 20% / bottom center stb. */
+}
+
+</style>
+
+<body>
+
+  <div id="navbar-container"></div>
+  <script>
+fetch("../navbar/index.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container text-center">
+      <h1 class="fw-bold">Kapcsolat</h1>
+      <p class="lead mb-0">Kérdése van vagy hibát jelentene be? Írjon, hívjon — 0–24 elérhető ügyelet.</p>
+    </div>
+  </section>
+
+  <!-- TARTALOM -->
+  <section class="section container">
+    <div class="row g-4 justify-content-center">
+      <!-- Elérhetőségek -->
+      <div class="col-lg-4">
+        <div class="card h-100 p-4">
+          <h3 class="card-title mb-3">Elérhetőségek</h3>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Cím</div>
+            <div>1051 Budapest, Példa tér 1.</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Telefon (0–24 ügyelet)</div>
+            <a href="tel:+3612345678" class="btn-custom mt-1">+36 1 234 5678</a>
+          </div>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Email</div>
+            <a href="mailto:info@liftkarbantarto.hu" class="btn-custom mt-1">info@liftkarbantarto.hu</a>
+          </div>
+
+          <div class="mb-0">
+            <div class="small text-secondary">Nyitvatartás</div>
+            <ul class="list-unstyled mb-0">
+              <li>H–P: 08:00–17:00 (iroda)</li>
+              <li>Ügyelet: 0–24 (hibabejelentés)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Üzenetküldő űrlap -->
+      <div class="col-lg-6">
+        <div class="card h-100 p-4">
+          <h3 class="card-title mb-3">Írjon üzenetet</h3>
+          <!-- Ha szeretnéd, bekötöm Formspree-re. Addig demó. -->
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Név</label>
+              <input type="text" class="form-control" id="name" placeholder="Teljes név" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="email@pelda.hu" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Üzenet</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Röviden foglalja össze a kérését" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-custom">Küldés</button>
+            <p class="text-secondary mt-2 mb-0" style="font-size:.9rem;">
+              *Az űrlap jelenleg demó. Szeretné, hogy levelet küldjön? Bekötöm Formspree-re vagy email API-ra.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- (opcionális) Térkép -->
+      <!--
+      <div class="col-12">
+        <div class="card p-0">
+          <iframe
+            src="https://www.google.com/maps?q=1051%20Budapest%20P%C3%A9lda%20t%C3%A9r%201&output=embed"
+            width="100%" height="320" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- (opcionális) görgetésre sötétedő navbar -->
+  <script>
+    window.addEventListener("scroll", () => {
+      const n = document.querySelector(".custom-navbar");
+      if (!n) return;
+      window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+    });
+
+  </script>
+</body>
+</html>
