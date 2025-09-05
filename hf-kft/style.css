@@ -309,3 +309,287 @@ body{
     background: none !important;
   }
 }
+/* ===== Inline linkek (pl. email) – téma szerint ===== */
+a,
+a:visited{
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+a:hover{
+  color: var(--accent-dark);
+  text-shadow: 0 0 6px var(--accent-15);
+}
+
+/* csak mailto linkek finom kiemelése */
+a[href^="mailto:"]{
+  font-weight: 700;
+}
+a[href^="mailto:"]:hover{
+  text-decoration: underline;
+}
+
+/* Ha szeretnél külön osztályt inline linkekhez: .link-accent */
+.link-accent{ color: var(--accent); font-weight: 700; }
+.link-accent:hover{ color: var(--accent-dark); text-decoration: underline; }
+
+/* ===== Outline gomb (új elemekhez) – egységes dizájn ===== */
+.btn-outline-custom{
+  /* meglévő méretezéshez kiegészítés */
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 0 0 0 rgba(255,122,0,0);
+}
+.btn-outline-custom:hover{
+  color: #000;
+  background: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px var(--accent-15);
+}
+.btn-outline-custom:active{
+  transform: translateY(0);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+.btn-outline-custom:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 .2rem var(--accent-15);
+}
+
+/* Opcionális: kis ikon a gombok előtt – ha szeretnéd */
+.btn-outline-custom .icon{ margin-right: .5rem; display: inline-flex; }
+
+/* ===== Konzisztens tipó az új címekre/kártyákra ===== */
+h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
+.card .card-title{ color: var(--accent); font-weight: 800; }
+
+/* ===== Ne befolyásolja a logót/brand képet ===== */
+.navbar .navbar-brand img{ filter: none; } /* csak explicit példának; nincs extra effekt */
+/* ===== FAQ / Accordion – dark + orange theme ===== */
+.accordion {
+  --acc-border: var(--accent-25);
+  --acc-bg: var(--panel);
+  --acc-bg-hover: #1f1f1f;
+  --acc-text: var(--text);
+  --acc-muted: var(--muted);
+}
+
+.accordion-item {
+  background: transparent;
+  border: 1px solid var(--acc-border) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: saturate(110%);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.accordion-item + .accordion-item { margin-top: .75rem; }
+
+.accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(255,122,0,.12);
+  border-color: var(--accent-25);
+}
+
+/* Header button */
+.accordion-button {
+  background: var(--acc-bg);
+  color: var(--acc-text);
+  padding: 1rem 1.1rem;
+  font-weight: 700;
+  letter-spacing: .2px;
+  border: 0;
+  box-shadow: none !important;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* Remove Bootstrap default light bg on expand */
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(0deg, rgba(255,122,0,.08), rgba(255,122,0,.08)), var(--acc-bg);
+  color: #fff;
+}
+
+/* Hover states */
+.accordion-button:hover { background: var(--acc-bg-hover); }
+
+/* Focus ring in theme color */
+.accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 .2rem var(--accent-15) !important;
+}
+
+/* Custom chevron in accent color */
+.accordion-button::after {
+  background-image: none !important;
+  content: "";
+  inline-size: 10px;
+  block-size: 10px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+  transition: transform .25s ease, border-color .2s ease;
+  margin-left: .75rem;
+}
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(45deg);
+  border-color: var(--accent);
+}
+
+/* Body */
+.accordion-body {
+  background: #141414;
+  color: var(--acc-muted);
+  border-top: 1px solid var(--acc-border);
+  padding: 1rem 1.1rem 1.15rem;
+  line-height: 1.55;
+}
+
+/* Rounded corners stay pretty when open */
+.accordion-item:first-of-type, .accordion-item:last-of-type {
+  border-radius: 12px;
+}
+.accordion-item .accordion-collapse.collapse.show + .accordion-body,
+.accordion-item .accordion-collapse.collapsing + .accordion-body {
+  border-top-color: var(--accent-25);
+}
+/* ====== Univerzális tábladizájn – dark theme (asztali + mobil stacked) ====== */
+.table-legal { 
+  margin-block: 1.25rem; 
+}
+
+/* Alap (asztali) tábladizájn */
+.table-legal table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--accent-25);
+  border-radius: 12px;
+  overflow: hidden; /* a lekerekítés működjön */
+  box-shadow: 0 6px 24px rgba(0,0,0,.18);
+}
+
+.table-legal caption {
+  caption-side: top;
+  color: var(--muted);
+  padding: .5rem .75rem .25rem;
+  font-size: .95rem;
+}
+
+.table-legal thead th {
+  background: #151515;
+  color: var(--text);
+  border-bottom: 1px solid var(--accent-25);
+  padding: .8rem .9rem;
+  text-align: left;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.table-legal tbody th,
+.table-legal tbody td {
+  padding: .75rem .9rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Zebra és hover asztalin */
+.table-legal tbody tr:nth-child(even) {
+  background: rgba(255,255,255,.02);
+}
+.table-legal tbody tr:hover {
+  background: rgba(255,122,0,.06);
+}
+
+/* Szövegkiegészítők */
+.table-legal a { color: var(--text); text-decoration: underline; }
+.table-legal a:hover { color: var(--accent); }
+.table-legal code { color: var(--muted); background: rgba(255,255,255,.06); padding: .1rem .3rem; border-radius: 6px; }
+
+/* Kompakt mód – ha kell: add hozzá a .table-legal--compact osztályt a wrapperhez */
+.table-legal.table-legal--compact thead th,
+.table-legal.table-legal--compact tbody th,
+.table-legal.table-legal--compact tbody td {
+  padding: .55rem .7rem;
+  font-size: .95rem;
+}
+/* Small screens: tighter spacing */
+@media (max-width: 576px){
+  .accordion-button { padding: .9rem .95rem; }
+  .accordion-body { padding: .9rem .95rem 1rem; }
+}
+/* ===== Mobil-barát "kártyás" táblák (stacked) ===== */
+.table-legal { margin-block: 1rem; }
+.table-legal table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+.table-legal thead th {
+  background: #151515;
+  color: var(--text);
+  border: 1px solid var(--accent-25);
+  padding: .7rem .8rem;
+  text-align: left;
+}
+.table-legal tbody td, 
+.table-legal tbody th {
+  border: 1px solid var(--accent-25);
+  padding: .7rem .8rem;
+  vertical-align: top;
+}
+.table-legal code, .table-legal em { color: var(--muted); }
+
+/* — mobilon kártyásra törjük — */
+@media (max-width: 640px) {
+  .table-legal table, 
+  .table-legal tbody, 
+  .table-legal tr, 
+  .table-legal td, 
+  .table-legal th { display: block; width: 100%; }
+
+  .table-legal thead { 
+    display: none; 
+  }
+
+  .table-legal tbody tr {
+    margin-bottom: .9rem;
+    border: 1px solid var(--accent-25);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--panel);
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  }
+
+  .table-legal tbody td, 
+  .table-legal tbody th {
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    padding: .75rem .9rem .6rem;
+  }
+  .table-legal tbody tr > :last-child {
+    border-bottom: none;
+  }
+
+  /* címke a cella elején a thead-ból (JS adja a data-label-t) */
+  .table-legal [data-label] {
+    position: relative;
+    padding-left: 9.5rem;      /* hely a címkének */
+    min-height: 42px;
+  }
+  .table-legal [data-label]::before {
+    content: attr(data-label);
+    position: absolute;
+    left: .9rem; top: .65rem;
+    width: 8.6rem;
+    color: #bbb;
+    font-weight: 700;
+    font-size: .875rem;
+    text-transform: none;
+    white-space: normal;
+    line-height: 1.2;
+  }
+}

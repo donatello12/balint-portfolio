@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="content-language" content="hu">
+
+  <title>Kapcsolat – hibabejelentés 0–24 | H és F Kft.</title>
+  <meta name="description" content="Lépjen kapcsolatba velünk! Hibabejelentés 0–24, ajánlatkérés, időpont-egyeztetés. Email: info@felvonoszerviz.hu • Hétköznap 08–16: +36 1 214 1761 / +36 1 212 9386 • Ügyelet: +36 1 280 8665 / +36 1 281 9064. Székhely: 1196 Budapest, Hunyadi u. 152.">
+  <link rel="canonical" href="https://www.felvonoszerviz.hu/contact/">
+
+  <!-- Hero kép előtöltése -->
+  <link rel="preload" as="image" href="/images/hatter4.jpg" fetchpriority="high">
+
+  <!-- Morzsamenü -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Főoldal","item":"https://www.felvonoszerviz.hu/"},
+      {"@type":"ListItem","position":2,"name":"Kapcsolat","item":"https://www.felvonoszerviz.hu/contact/"}
+    ]
+  }
+  </script>
+
+  <!-- ContactPage + több contactPoint -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Kapcsolat – H és F Kft.",
+    "url":"https://www.felvonoszerviz.hu/contact/",
+    "mainEntity":{
+      "@type":"LocalBusiness",
+      "name":"H és F KFT",
+      "legalName":"H és F Hibaelhárító és Felvonószerelő Korlátolt Felelősségű Társaság",
+      "email":"info@felvonoszerviz.hu",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Hunyadi u. 152.",
+        "addressLocality":"Budapest",
+        "postalCode":"1196",
+        "addressCountry":"HU"
+      },
+      "contactPoint":[
+        {
+          "@type":"ContactPoint",
+          "contactType":"Hibabejelentés – hétköznap 08–16",
+          "telephone":"+36 1 214 1761",
+          "availableLanguage":["hu"],
+          "hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:00"}
+        },
+        {
+          "@type":"ContactPoint",
+          "contactType":"Hibabejelentés – hétköznap 08–16",
+          "telephone":"+36 1 212 9386",
+          "availableLanguage":["hu"],
+          "hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:00"}
+        },
+        {
+          "@type":"ContactPoint",
+          "contactType":"Ügyelet – hétvégén/munkaszünet 08–15 és hétköznap 16–21",
+          "telephone":"+36 1 280 8665",
+          "availableLanguage":["hu"]
+        },
+        {
+          "@type":"ContactPoint",
+          "contactType":"Ügyelet – hétvégén/munkaszünet 08–15 és hétköznap 16–21",
+          "telephone":"+36 1 281 9064",
+          "availableLanguage":["hu"]
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Bootstrap + saját CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Hero */
+    .hero.hero-small{
+      --hero-h: 360px;
+      min-height: var(--hero-h);
+      display:flex; align-items:center;
+      background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        url('../images/hatter4.jpg') center/cover no-repeat;
+      color:#fff; text-align:center; padding: 40px 0;
+    }
+    @media (max-width:768px){ .hero.hero-small{ --hero-h: 320px; } }
+
+    /* Űrlap hibák */
+    .form-control.is-invalid, .form-select.is-invalid, textarea.is-invalid {
+      border-color:#ff4d4f !important;
+      box-shadow:0 0 0 .2rem rgba(255,77,79,.2) !important;
+    }
+    .invalid-feedback{ color:#ffb3b3; }
+
+    /* Cookie sáv */
+    .cookiebar{ position:fixed; inset:auto 0 0 0; z-index:9999; background:#0f0f0f; color:#eee; border-top:1px solid var(--accent-25); padding:14px 16px; }
+    .cookiebar .btn-accept{ background:var(--accent); color:#000; border:none; border-radius:999px; padding:8px 16px; font-weight:800; }
+    .cookiebar .btn-accept:hover{ background:var(--accent-dark); }
+    .cookiebar .btn-link{ color:var(--accent); text-decoration:none; }
+    .cookiebar .btn-link:hover{ text-decoration:underline; }
+    .cookiebar .cookie-row{ display:flex; gap:14px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div id="navbar-container"></div>
+  <script>
+    fetch("../navbar/index.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("navbar-container").innerHTML = html; });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container">
+      <h1 class="fw-bold">Kapcsolat</h1>
+      <p class="lead mb-0">Kérdése van vagy hibát jelentene be? Írjon, hívjon — 0–24 elérhető ügyelet.</p>
+    </div>
+  </section>
+
+  <!-- TARTALOM -->
+  <section class="section container">
+    <div class="row g-4 justify-content-center">
+      <!-- Elérhetőségek -->
+      <div class="col-lg-5">
+        <div class="card h-100 p-4">
+          <h3 class="card-title mb-3">Elérhetőségek</h3>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Cím</div>
+            <div>1012 Budapest, Attila út 123</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Hibabejelentés (hétköznap 08–16)</div>
+            <div class="d-grid gap-2">
+              <a class="btn-custom" href="tel:+3612141761">+36 1 214 1761</a>
+              <a class="btn-custom" href="tel:+3612129386">+36 1 212 9386</a>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Ügyelet</div>
+            <div class="text-secondary small mb-2">Hétvégén és munkaszüneti napokon 08–15, valamint hétköznap 16–21</div>
+            <div class="d-grid gap-2">
+              <a class="btn-outline-custom" href="tel:+3612808665">+36 1 280 8665</a>
+              <a class="btn-outline-custom" href="tel:+3612819064">+36 1 281 9064</a>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="small text-secondary">Email</div>
+            <a href="mailto:info@felvonoszerviz.hu" class="btn-custom mt-1">info@felvonoszerviz.hu</a>
+          </div>
+
+          <div class="mb-0">
+            <div class="small text-secondary">Nyitvatartás</div>
+            <ul class="list-unstyled mb-0">
+              <li>H–P: 08:00–16:00 (iroda)</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Üzenetküldő űrlap -->
+      <div class="col-lg-7">
+        <div class="card h-100 p-4">
+          <h3 class="card-title mb-3">Írjon üzenetet</h3>
+
+          <form id="contactForm" novalidate>
+            <!-- Honeypot -->
+            <input type="text" id="company" name="company" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;" tabindex="-1" aria-hidden="true">
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Név</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Teljes név" required minlength="3" maxlength="120">
+              <div class="invalid-feedback">Kérjük, adja meg a teljes nevét (min. 3 karakter).</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Telefon</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="+36 1 214 1761 vagy 06 30 123 4567" required>
+              <div class="invalid-feedback">Kérjük, érvényes magyar telefonszámot adjon meg.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="email@pelda.hu" required inputmode="email">
+              <div class="invalid-feedback">Kérjük, valós email címet adjon meg (pl. valaki@domain.hu).</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Üzenet</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Röviden foglalja össze a kérését" required minlength="10" maxlength="2000"></textarea>
+              <div class="invalid-feedback">Kérjük, írjon legalább 10 karaktert.</div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" value="1" id="consent" required>
+              <label class="form-check-label" for="consent">
+                Elfogadom az <a href="/aszf/" class="link-light">Általános Szerződési Feltételeket</a> és elolvastam az <a href="/adatkezeles/" class="link-light">Adatkezelési tájékoztatót</a>.
+              </label>
+              <div class="invalid-feedback">Az űrlap küldéséhez szükséges a feltételek elfogadása.</div>
+            </div>
+
+            <div class="d-grid d-sm-flex gap-2">
+              <button type="submit" class="btn-custom">Küldés</button>
+              <a href="tel:+3612141761" class="btn-outline-custom">Azonnali hibabejelentés</a>
+            </div>
+
+            <p class="text-secondary mt-2 mb-0" style="font-size:.9rem;">
+              *Demó űrlap. Ha szeretné, élesítem (Formspree / saját backend).
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÁBLÉC -->
+  <footer class="container py-4 text-center small text-secondary">
+    <div><strong>H és F Hibaelhárító és Felvonószerelő Kft.</strong> • Adószám: 10865295-2-43</div>
+    <div>Székhely: 1196 Budapest, Hunyadi u. 152. • Email: <a href="mailto:info@felvonoszerviz.hu">info@felvonoszerviz.hu</a> • Tel (08–16): <a href="tel:+3612141761">+36 1 214 1761</a>, <a href="tel:+3612129386">+36 1 212 9386</a> • Ügyelet: <a href="tel:+3612808665">+36 1 280 8665</a>, <a href="tel:+3612819064">+36 1 281 9064</a></div>
+    <div class="mt-2">
+      <a href="/aszf/" class="link-light">ÁSZF</a> ·
+      <a href="/adatkezeles/" class="link-light">Adatkezelési tájékoztató</a> ·
+      <a href="/cookie-tajekoztato/" class="link-light">Cookie tájékoztató</a>
+    </div>
+  </footer>
+
+  <!-- COOKIE SÁV -->
+  <div id="cookiebar" class="cookiebar" hidden>
+    <div class="cookie-row">
+      <span>🍪 Az oldalon sütiket használunk a működéshez és a jobb felhasználói élményhez.
+        Részletek: <a class="btn-link" href="/cookie-tajekoztato/">Cookie tájékoztató</a>,
+        <a class="btn-link" href="/adatkezeles/">Adatkezelés</a>.
+      </span>
+      <button class="btn-accept">Elfogadom</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar sötétítés görgetésnél (ha van .custom-navbar)
+    window.addEventListener("scroll", () => {
+      const n = document.querySelector(".custom-navbar");
+      if (!n) return;
+      window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+    });
+
+    // ====== FRONTEND VALIDÁCIÓ ======
+    const form   = document.getElementById('contactForm');
+    const emailR = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    // Magyar telefonszámok: mobil és vezetékes + budapesti rövid formátumok
+    // Példák: +36 1 214 1761 | 06 30 123 4567 | +3612129386 | 214-1761
+    const phoneR = new RegExp(
+      '^('
+        + '(?:\\+36|06)\\s*\\d{1,2}[\\s-]*\\d{3}[\\s-]*\\d{3,4}'   // normál +36/06 formák
+        + '|'
+        + '(?:1[\\s-]*\\d{3}[\\s-]*\\d{4})'                        // budapesti előtag nélküli: 1 234 5678
+        + '|'
+        + '(?:\\d{3}[\\s-]?\\d{4})'                                // rövid: 214-1761
+      + ')$'
+    );
+
+    const disposableHints = [
+      "tempmail","mailinator","guerrillamail","10minutemail","yopmail","sharklasers","trashmail","discard"
+    ];
+
+    form.addEventListener('submit', (e) => {
+      // Honeypot
+      if (document.getElementById('company').value.trim() !== '') {
+        e.preventDefault();
+        return false;
+      }
+
+      let ok = true;
+
+      const name  = form.name;
+      const phone = form.phone;
+      const email = form.email;
+      const msg   = form.message;
+      const cons  = document.getElementById('consent');
+
+      // Név
+      if (!name.value || name.value.trim().length < 3) { name.classList.add('is-invalid'); ok = false; }
+      else { name.classList.remove('is-invalid'); }
+
+      // Telefon
+      if (!phoneR.test(phone.value.trim())) { phone.classList.add('is-invalid'); ok = false; }
+      else { phone.classList.remove('is-invalid'); }
+
+      // Email – HTML5 + regex + disposable heurisztika
+      const emailVal = email.value.trim().toLowerCase();
+      const domain = emailVal.split('@')[1] || '';
+      const isDisposable = disposableHints.some(h => domain.includes(h));
+
+      if (!email.checkValidity() || !emailR.test(emailVal) || isDisposable) {
+        email.classList.add('is-invalid'); ok = false;
+      } else { email.classList.remove('is-invalid'); }
+
+      // Üzenet
+      if (!msg.value || msg.value.trim().length < 10) { msg.classList.add('is-invalid'); ok = false; }
+      else { msg.classList.remove('is-invalid'); }
+
+      // Consent
+      if (!cons.checked) { cons.classList.add('is-invalid'); ok = false; }
+      else { cons.classList.remove('is-invalid'); }
+
+      if (!ok) { e.preventDefault(); e.stopPropagation(); return false; }
+      // DEMÓ: itt menne a beküldés (fetch / submit)
+    });
+
+    // ====== COOKIE SÁV ======
+    (function(){
+      const KEY = 'hf_cookie_consent_v1';
+      const bar = document.getElementById('cookiebar');
+      if (!localStorage.getItem(KEY)) { bar.hidden = false; }
+      bar.querySelector('.btn-accept').addEventListener('click', () => {
+        localStorage.setItem(KEY, JSON.stringify({accepted:true, ts: Date.now()}));
+        bar.hidden = true;
+      });
+    })();
+  </script>
+</body>
+</html>
