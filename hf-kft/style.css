@@ -65,7 +65,7 @@ body{
 .hero{
   background:
     linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
-    url('/hf-kft/images/hatter.jpg') center/cover no-repeat;
+    url('/images/hatter.jpg') center/cover no-repeat;
   color:#fff;
   padding:120px 20px;
   text-align:center;
@@ -76,7 +76,7 @@ body{
 .hero-small{
   background:
     linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
-    url('/hf-kft/images/lift3.jpg') center/cover no-repeat;
+    url('/images/lift3.jpg') center/cover no-repeat;
   padding:80px 20px; color:#fff;
 }
 
@@ -593,7 +593,6 @@ h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
     line-height: 1.2;
   }
 }
-
 .logo-badge{
   display:inline-block;
   padding:16px 18px;
