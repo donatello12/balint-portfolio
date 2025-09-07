@@ -65,7 +65,7 @@ body{
 .hero{
   background:
     linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
-    url('/images/hatter.jpg') center/cover no-repeat;
+    url('/hf-kft/images/hatter.jpg') center/cover no-repeat;
   color:#fff;
   padding:120px 20px;
   text-align:center;
@@ -76,7 +76,7 @@ body{
 .hero-small{
   background:
     linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
-    url('/images/lift3.jpg') center/cover no-repeat;
+    url('/hf-kft/images/lift3.jpg') center/cover no-repeat;
   padding:80px 20px; color:#fff;
 }
 
@@ -612,3 +612,63 @@ h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
   .logo-img{ max-width:280px; }
 }
 
+.hero img[src$="logo.png"] {
+  max-width: 260px !important;
+  opacity: 1 !important;
+  filter: saturate(1.5) contrast(1.15) hue-rotate(-8deg);
+}
+/* ===== Cégadatok lista feldobása ===== */
+.card ul.list-unstyled li {
+  padding: .6rem .2rem;
+  border-bottom: 1px dashed rgba(255,122,0,.25); /* finom elválasztó */
+  display: flex;
+  gap: .5rem;
+  align-items: flex-start;
+  transition: background-color .2s ease;
+}
+.card ul.list-unstyled li:last-child {
+  border-bottom: none;
+}
+
+.card ul.list-unstyled li:hover {
+  background: rgba(255,122,0,.05);
+}
+
+/* cím: narancs, félkövér */
+.card ul.list-unstyled strong {
+  min-width: 160px;  /* oszlopszerű hatás */
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* értékek: világos szürke */
+.card ul.list-unstyled li {
+  color: var(--text);
+  font-size: .95rem;
+}
+
+/* linkek (email, telefon) jobban kiemelve */
+.card ul.list-unstyled a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.card ul.list-unstyled a:hover {
+  text-decoration: underline;
+  color: var(--accent-dark);
+}
+
+/* kártya finom extra */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255,122,0,.08), transparent 70%);
+  pointer-events: none;
+}
