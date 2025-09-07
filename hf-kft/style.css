@@ -593,6 +593,7 @@ h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
     line-height: 1.2;
   }
 }
+
 .logo-badge{
   display:inline-block;
   padding:16px 18px;
@@ -610,3 +611,4 @@ h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
 @media (max-width: 576px){
   .logo-img{ max-width:280px; }
 }
+
