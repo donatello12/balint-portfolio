@@ -672,3 +672,36 @@ h1,h2,h3,h4,h5,h6{ letter-spacing:.2px; }
   background: linear-gradient(145deg, rgba(255,122,0,.08), transparent 70%);
   pointer-events: none;
 }
+/* kártya finom extra */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255,122,0,.08), transparent 70%);
+  pointer-events: none;
+}
+.seg-badges{
+  display:flex; flex-wrap:wrap; gap:.5rem;
+  justify-content:center;       /* <-- középre */
+}.badge-pill{
+  background: var(--accent); color:#000; font-weight:800;
+  padding:.45rem .8rem; border-radius:999px; font-size:.95rem;
+  border:2px solid var(--accent); box-shadow:0 4px 14px var(--accent-15);
+}
+.badge-pill.badge-soft{
+  background: transparent; color: var(--accent);
+  border-color: var(--accent); box-shadow:none;
+}
+
+.illus-note {
+  font-size: 0.75rem;       /* nagyon kicsi */
+  color: rgba(255,255,255,.35); /* halvány */
+  text-align: center;
+  margin-top: .5rem;
+}
+
