@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[Étterem neve] – Hivatalos oldal</title>
+  <meta name="description" content="[Rövid leírás az étteremről]" />
+  <link rel="icon" href="/favicon.png" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav aria-label="Fő navigáció">
+      <a href="#hero" aria-label="Ugrás a nyitó szekcióhoz">Kezdőlap</a>
+      <a href="#menu">Étlap</a>
+      <a href="#foglalas">Foglalás</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO + LOGÓ KÁRTYA (ehhez kell a #logo-main, #logo-second stb.) ===== -->
+  <section id="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="sr-only">Üdvözöljük a [Étterem neve] oldalán</h1>
+
+    <!-- LOGÓ KÁRTYA – a megadott animációs CSS-hez igazítva -->
+    <div class="card" aria-label="Étterem logó kártya">
+      <span class="border" aria-hidden="true"></span>
+
+      <div class="content">
+        <!-- Logó (két réteg) – nyugodtan cseréld saját SVG-re -->
+        <div class="logo" aria-hidden="true">
+          <svg class="logo1" id="logo-main" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" />
+          </svg>
+          <svg class="logo2" id="logo-second" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" />
+          </svg>
+          <div class="trail"></div>
+        </div>
+
+        <div class="logo-bottom-text">[ÉTTEREM NEVE]</div>
+      </div>
+
+      <div class="bottom-text">fine • dining • bar</div>
+    </div>
+
+    <p class="hero-lead">
+      [Rövid szlogen] – Szezonális alapanyagok, modern technikák, barátságos hangulat.
+    </p>
+    <p><a href="#foglalas">Asztalfoglalás</a></p>
+  </section>
+
+  <!-- ===== RÓLUNK ===== -->
+  <section id="rolunk" aria-labelledby="rolunk-title">
+    <h2 id="rolunk-title">Rólunk</h2>
+    <p>
+      [1–2 bekezdés az étterem koncepciójáról, séfről, helyszínről.]
+    </p>
+  </section>
+
+  <!-- ===== ÉTLAP KÁRTYÁK (flip-animációs „kaja” kártya markup) ===== -->
+  <section id="menu" aria-labelledby="menu-title">
+    <h2 id="menu-title">Étlap kedvencek</h2>
+
+    <div class="menu-grid">
+      <!-- 1. étel -->
+      <article class="card" aria-label="Fogás kártya">
+        <div class="content">
+          <!-- HÁTOLDAL (alapnézet) -->
+          <div class="back" aria-hidden="true">
+            <div class="circle" id="bottom"></div>
+            <div class="circle" id="right"></div>
+
+            <div class="back-content">
+              <h3 class="badge">Új</h3>
+              <p>Részletekért fordítsd meg</p>
+            </div>
+          </div>
+
+          <!-- ELŐLAP (forgatás után látszik) -->
+          <div class="front">
+            <img class="img" src="images/etelek/fogas-1.jpg" alt="Fogás neve" />
+            <div class="front-content">
+              <span class="badge">Előétel</span>
+
+              <div class="description">
+                <div class="title">
+                  <p>Grillezett polip &amp; citrus</p>
+                  <p class="price">5 900 Ft</p>
+                </div>
+                <p class="card-footer">citrus vinaigrette • olívák • petrezselyem</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. étel -->
+      <article class="card" aria-label="Fogás kártya">
+        <div class="content">
+          <div class="back" aria-hidden="true">
+            <div class="circle" id="bottom"></div>
+            <div class="circle" id="right"></div>
+            <div class="back-content">
+              <h3 class="badge">Ajánlat</h3>
+              <p>Részletekért fordítsd meg</p>
+            </div>
+          </div>
+
+          <div class="front">
+            <img class="img" src="images/etelek/fogas-2.jpg" alt="Fogás neve" />
+            <div class="front-content">
+              <span class="badge">Főétel</span>
+
+              <div class="description">
+                <div class="title">
+                  <p>Marha steak, borsmártás</p>
+                  <p class="price">9 900 Ft</p>
+                </div>
+                <p class="card-footer">szarvasi bélszín • burgonya gratin • ropogós hagyma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. étel -->
+      <article class="card" aria-label="Fogás kártya">
+        <div class="content">
+          <div class="back" aria-hidden="true">
+            <div class="circle" id="bottom"></div>
+            <div class="circle" id="right"></div>
+            <div class="back-content">
+              <h3 class="badge">Vegán</h3>
+              <p>Részletekért fordítsd meg</p>
+            </div>
+          </div>
+
+          <div class="front">
+            <img class="img" src="images/etelek/fogas-3.jpg" alt="Fogás neve" />
+            <div class="front-content">
+              <span class="badge">Desszert</span>
+
+              <div class="description">
+                <div class="title">
+                  <p>Csokoládé mousse, málna</p>
+                  <p class="price">3 900 Ft</p>
+                </div>
+                <p class="card-footer">72% csoki • friss málna • ropogós morzsa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- további kártyák… -->
+    </div>
+    <p><a href="/etlap.pdf">Teljes étlap letöltése (PDF)</a></p>
+  </section>
+
+  <!-- ===== FOGLALÁS ===== -->
+  <section id="foglalas" aria-labelledby="foglalas-title">
+    <h2 id="foglalas-title">Asztalfoglalás</h2>
+    <form id="foglalas-form">
+      <label>
+        Név
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Telefon
+        <input type="tel" name="phone" required />
+      </label>
+      <label>
+        Dátum
+        <input type="date" name="date" required />
+      </label>
+      <label>
+        Időpont
+        <input type="time" name="time" required />
+      </label>
+      <label>
+        Fő
+        <input type="number" name="guests" min="1" value="2" required />
+      </label>
+      <button type="submit">Foglalás küldése</button>
+    </form>
+  </section>
+
+  <!-- ===== KAPCSOLAT ===== -->
+  <section id="kapcsolat" aria-labelledby="kapcsolat-title">
+    <h2 id="kapcsolat-title">Kapcsolat</h2>
+    <address>
+      [Cím] • [Nyitvatartás] •
+      <a href="tel:+3612345678">+36 1 234 5678</a> •
+      <a href="mailto:info@etterem.hu">info@etterem.hu</a>
+    </address>
+    <div class="map-embed">
+      <!-- Google Maps iframe helye (opcionális) -->
+    </div>
+  </section>
+
+  <!-- ===== LÁBLÉC ===== -->
+  <footer>
+    <small>© <span id="year"></span> [Étterem neve]. Minden jog fenntartva.</small>
+  </footer>
+
+  <script>
+    // apró kényelem a lábléc évszámhoz
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
