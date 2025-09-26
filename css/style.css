@@ -1287,3 +1287,19 @@ main > .card + .card{
   padding:4px; box-sizing:border-box;
   margin-bottom:.75rem;
 }
+/* ======= Badges & KPIs ======= */
+.badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+  justify-content: center;   /* <-- ez hozza középre */
+}
+
+.badge{
+  border: 1px solid rgba(255,255,255,.14);
+  background: var(--surface);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-size: .85rem;
+}
